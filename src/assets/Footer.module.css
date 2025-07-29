@@ -1,0 +1,11 @@
+Footer{
+    text-align: center;
+    font-size: var(--bodyverysmall-size);
+    line-height: var(--bodyverysmall-line-height);
+}
+
+.copyright {
+    font-weight: bold;
+    font-size: var(--bodysmall-size);
+    line-height: var(--bodysmall-line-height);
+}

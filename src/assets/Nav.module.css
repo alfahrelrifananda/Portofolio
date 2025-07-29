@@ -1,0 +1,22 @@
+.Navbar {
+    display: flex;
+    font-size: 18px;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.Navbar div {
+    font-weight: bold;
+}
+
+.Navbar ul {
+    display: flex;
+    gap: 20px;
+}
+.Navbar ul li {
+    list-style: none;
+}
+.Navbar ul li a {
+    text-decoration: none;
+    color: var(--color);
+}
