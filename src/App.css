@@ -3,7 +3,6 @@
   margin: 0;
 }
 
-
 body {
   padding-left: var(--padding-horizontal);
   padding-right: var(--padding-horizontal);
@@ -14,7 +13,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 70vh;
+  font-weight: bold;
+  height: 75vh;
 }
 .jumbotron h1 {
   font-size: var(--header-size);
@@ -23,6 +23,7 @@ body {
 .jumbotron p {
   padding-top: 20px;
   padding-bottom: 32px;
+  opacity: .9;
   font-size: var(--subheader-size);
   line-height: var(--subheader-line-height);
 }
@@ -37,4 +38,33 @@ body {
 .jumbotron ul li a {
   color: var(--raw-umber);
   text-decoration: none;
+}
+
+.jumbotron ul li a:hover {
+   color: var(--hover-text);
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1000px) {
+  #navbar-ul.show {
+    display: flex;
+  }
+ 
+  body {
+    padding-left: var(--padding-horizontal-res);
+    padding-right: var(--padding-horizontal-res);
+  }
+  .jumbotron h1 {
+    font-size: var(--header-size-res);
+    line-height: var(--header-line-height-res);
+  }
+  .jumbotron p {
+    font-size: var(--subheader-size-res);
+    line-height: 21px;
+  }
+  .jumbotron ul {
+    gap: 15px;
+    font-size: var(--body-size-res);
+    line-height: var(--body-line-height-res);
+  }
 }
