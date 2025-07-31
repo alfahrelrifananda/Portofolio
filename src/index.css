@@ -3,6 +3,10 @@
   line-height: 1.5;
   color: #2E2B26;
   background-color: #EFEBE0;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   /* Width */
   --container-width: 65vw;
@@ -38,10 +42,7 @@
   --silver: #BBBBBB;
   --timberwolf: #D6D6D5;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
 }
 
 @media screen and (max-width:1000px){

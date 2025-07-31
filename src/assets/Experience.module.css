@@ -1,0 +1,45 @@
+.container {
+    padding-top: var(--padding-vertical);
+    padding-bottom: var(--padding-vertical);
+}
+.container header {
+  font-size: var(--header-size);
+  line-height: var(--header-line-height);
+  font-weight: var(--bold);
+}
+.container .content {
+    width: var(--container-width);
+}
+
+.container td, th {
+    text-align: left;
+    padding: 1vw;
+    border-right:1px solid var(--color);
+    border-top:1px solid var(--color);
+}
+
+.container th {
+    border-top:1px solid transparent;
+    border-right:1px solid var(--color);
+}
+
+.container th:last-child {
+    border-right: 1px solid transparent;
+}
+
+.container td:last-child {
+    border-right:1px solid transparent;
+}
+.container h4 {
+  font-size: var(--subheader-size);
+  line-height: var(--subheader-line-height);
+  font-weight: var(--bold);
+}
+
+.container p {
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+}
+.container ul {
+    padding-left: 3vw;
+}
