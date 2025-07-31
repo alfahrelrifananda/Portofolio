@@ -5,7 +5,7 @@ Footer{
 }
 
 .copyright {
-    font-weight: bold;
+    font-weight: 700;
     font-size: var(--bodysmall-size);
     line-height: var(--bodysmall-line-height);
 }

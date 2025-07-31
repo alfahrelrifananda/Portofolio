@@ -13,7 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-weight: bold;
+  font-weight: 700;
   height: 75vh;
 }
 .jumbotron h1 {
@@ -53,6 +53,9 @@ body {
   body {
     padding-left: var(--padding-horizontal-res);
     padding-right: var(--padding-horizontal-res);
+  }
+  .jumbotron {
+    height: 65vh;
   }
   .jumbotron h1 {
     font-size: var(--header-size-res);

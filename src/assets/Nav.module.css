@@ -4,7 +4,7 @@
     line-height: var(--body-line-height);
     justify-content: space-between;
     padding-top: 20px;
-    font-weight: bold;
+    font-weight: 700;
 
 }
 .Navbar .menu {
