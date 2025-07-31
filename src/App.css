@@ -13,7 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-weight: 700;
+  font-weight: var(--bold);
   height: 75vh;
 }
 .jumbotron h1 {
@@ -49,25 +49,13 @@ body {
   #navbar-ul.show {
     display: flex;
   }
- 
-  body {
-    padding-left: var(--padding-horizontal-res);
-    padding-right: var(--padding-horizontal-res);
-  }
   .jumbotron {
     height: 65vh;
   }
-  .jumbotron h1 {
-    font-size: var(--header-size-res);
-    line-height: var(--header-line-height-res);
-  }
   .jumbotron p {
-    font-size: var(--subheader-size-res);
     line-height: 21px;
   }
   .jumbotron ul {
     gap: 15px;
-    font-size: var(--body-size-res);
-    line-height: var(--body-line-height-res);
   }
 }

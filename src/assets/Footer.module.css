@@ -1,5 +1,6 @@
 Footer{
     text-align: center;
+    padding-bottom: var(--padding-vertical);
     font-size: var(--bodyverysmall-size);
     line-height: var(--bodyverysmall-line-height);
 }

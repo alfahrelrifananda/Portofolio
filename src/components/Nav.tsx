@@ -1,3 +1,4 @@
+import { Link } from "react-router"
 import Style from "../assets/Nav.module.css"
 
 export default function Nav() {
@@ -10,14 +11,24 @@ export default function Nav() {
     return (
         <>
         <nav className={Style.Navbar}>
-            <div>Alfahrel Rifananda</div>
+            <Link to="/" className={Style.logo}>Alfahrel Rifananda</Link>
             <div className={Style.menu} onClick={menuToggle}>Menu</div>
             <ul id="navbar-ul">
-                <li><a href="">About</a></li>
-                <li><a href="">Expertise</a></li>
-                <li><a href="">Experience</a></li>
-                <li><a href="">Project</a></li>
-                <li><a href="">Contact</a></li>
+                <li>
+                    <Link to="/about" className={Style.a}>About</Link>
+                </li>
+                <li>
+                    <Link to="/expertise" className={Style.a}>Expertise</Link>
+                </li>
+                <li>
+                    <Link to="/experience" className={Style.a}>Experience</Link>
+                </li>
+                <li>
+                    <Link to="/project" className={Style.a}>Project</Link>
+                </li>
+                <li>
+                    <Link to="/contact" className={Style.a}>Contact</Link>
+                </li>
             </ul>
         </nav>
         </>   
