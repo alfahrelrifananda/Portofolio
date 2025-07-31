@@ -13,7 +13,8 @@ export default function Experience() {
             <h4>Project</h4>
             <br />
             <p>
-               <table >
+              <div className={Style.tableContent}>
+                <table className={Style.table}>
                 <tr>
                     <th>Title</th>
                     <th>Technology</th>
@@ -21,13 +22,19 @@ export default function Experience() {
                     <th>Position</th>
                 </tr>
                 <tr>
-                    <td>SMPN 8 Surakarta</td>
+                    <td>SMPN 8 Solo</td>
                     <td>Wordpress and Figma</td>
                     <td>PHP</td>
                     <td>Prototype and Development</td>
                 </tr>
                 <tr>
-                    <td>SMAN 8 Surakarta</td>
+                    <td>SMAN 8 Solo</td>
+                    <td>Wordpress and Figma</td>
+                    <td>PHP</td>
+                    <td>Prototype and Development</td>
+                </tr>
+                 <tr>
+                    <td>Andala Library</td>
                     <td>Wordpress and Figma</td>
                     <td>PHP</td>
                     <td>Prototype and Development</td>
@@ -51,6 +58,7 @@ export default function Experience() {
                     <td>Full Stack</td>
                 </tr>
                </table>
+              </div>
             </p>
            <div className={Style.content}>
             <br />

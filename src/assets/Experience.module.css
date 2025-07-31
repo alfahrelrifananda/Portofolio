@@ -1,6 +1,7 @@
 .container {
     padding-top: var(--padding-vertical);
     padding-bottom: var(--padding-vertical);
+    min-height: var(--container-height);
 }
 .container header {
   font-size: var(--header-size);
@@ -9,6 +10,13 @@
 }
 .container .content {
     width: var(--container-width);
+}
+
+.container .tableContent {
+    overflow: auto;
+}
+.container table {
+    width: 1100px;
 }
 
 .container td, th {

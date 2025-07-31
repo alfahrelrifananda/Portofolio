@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   justify-content: center;
   font-weight: var(--bold);
-  height: 75vh;
+  min-height: var(--container-height);
 }
 .jumbotron h1 {
   font-size: var(--header-size);
@@ -35,17 +35,21 @@ body {
   justify-content: center;
   gap: 20px;
 }
-.jumbotron ul li a {
+a {
   color: var(--raw-umber);
   text-decoration: none;
+  font-weight: var(--bold);
 }
 
-.jumbotron ul li a:hover {
-   color: var(--hover-text);
+a:hover {
+  color: var(--hover-text);
   text-decoration: underline;
 }
 
 @media screen and (max-width: 1000px) {
+body {
+  overflow-x: hidden;
+}
   #navbar-ul.show {
     display: flex;
   }

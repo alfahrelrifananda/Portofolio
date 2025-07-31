@@ -11,7 +11,21 @@ export default function Contact() {
             <header>Contact Me</header>
             <br />
             <p>
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas qui architecto reprehenderit ipsam perferendis magnam atque optio, similique quaerat eligendi voluptate beatae, amet nihil quisquam exercitationem praesentium, nesciunt quis rerum aut ea aperiam illum saepe ex? Quasi velit maxime ea sit, vitae quos.
+              You can email me at <i>pahrel1234@gmail.com</i>, or drop me a message on Instagram.
+            </p>
+            <br />
+            <p>
+              Want to connect on Instagram? <a href="">Feel free to add me.</a> 
+            </p>
+            <br />
+            <p>
+              I can also be found on <a href="">Github.</a>
+            </p>
+            <br />
+            <h4>Schedule a call appointment</h4>
+            <br />
+            <p>
+              To prevent phone spam, I don’t publically share my number, but feel free to reach out via email or Instagram to schedule a call.
             </p>
         </div>
       <Footer/>

@@ -8,8 +8,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Width */
+  /* Size */
   --container-width: 65vw;
+  --container-height: 75vh;
 
   /* Padding  */
   --padding-horizontal: 7vw;

@@ -11,7 +11,7 @@ export default function Project() {
             <header>My Recent Project</header>
             <br />
             <p>
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas qui architecto reprehenderit ipsam perferendis magnam atque optio, similique quaerat eligendi voluptate beatae, amet nihil quisquam exercitationem praesentium, nesciunt quis rerum aut ea aperiam illum saepe ex? Quasi velit maxime ea sit, vitae quos.
+              Still under Construction..
             </p>
         </div>
       <Footer/>
