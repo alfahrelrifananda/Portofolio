@@ -22,16 +22,16 @@ export default function About() {
             <h4>Work</h4>
             <br />
             <p>
-                As a passionate aspiring software engineer, I enjoy building intuitive and engaging applications. My experience spans across various technologies, including Java, XML, TypeScript, and React for front-end and application development. I'm also familiar with database solutions like Supabase and Firebase.
+                As a passionate aspiring software engineer, I enjoy building intuitive and engaging applications. My experience spans across various technologies, including Java, TypeScript, and React for front-end and application development. I'm also familiar with database like Supabase and Firebase.
                 <br />
                 <br />
-                During my studies, I developed Chameleon, a mobile application akin to Pinterest, utilizing Flutter with Material 3 and dynamic color features, showcasing my ability to create modern and user-friendly interfaces. Additionally, I am proficient in Figma for design and prototyping.
+                During my studies, I developed Chameleon, a mobile application similiar to Pinterest, utilizing Flutter with Material 3 and dynamic color features, showcasing my ability to create modern and user-friendly interfaces. Additionally, I am proficient in Figma for design and prototyping.
             </p>
             <br />
             <h4>Career</h4>
             <br />
             <p>
-                My fascination with computers and software ignited through encounters with Custom ROMs and GNU/Linux. 
+                My fascination with computers and software ignited through Android's Custom ROMs and GNU/Linux. 
                 <br />
                 <br />
                 This hands-on exploration sparked a profound interest in how software functions at a fundamental level, compelling me to delve deeper into programming and system architecture. This early passion naturally guided me towards a formal education in software engineering, laying the groundwork for my continuous learning journey.

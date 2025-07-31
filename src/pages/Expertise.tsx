@@ -114,7 +114,7 @@ export default function Expertise() {
                 <br />
                 <ul>
                     <li>
-                        <b>"Always choose the best tool for the job"</b> Selecting technologies based on project requirements and scalability.
+                        <i>"Always choose the best tool for the job"</i> Selecting technologies based on project requirements and scalability.
                     </li>
                     <li>
                         Prioritizing readability and maintainability for future development.

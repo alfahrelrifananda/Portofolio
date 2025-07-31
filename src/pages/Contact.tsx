@@ -11,15 +11,15 @@ export default function Contact() {
             <header>Contact Me</header>
             <br />
             <p>
-              You can email me at <i>pahrel1234@gmail.com</i>, or drop me a message on Instagram.
+              You can email me at <i>pahrel1234@gmail.com</i>, or drop me a message on Telegram.
             </p>
             <br />
             <p>
-              Want to connect on Instagram? <a href="">Feel free to add me.</a> 
+              Want to connect on Telegram? <a href="https://t.me/Nexuuussss">Feel free to add me.</a> 
             </p>
             <br />
             <p>
-              I can also be found on <a href="">Github.</a>
+              I can also be found on <a href="https://github.com/alfahrelrifananda">Github.</a>
             </p>
             <br />
             <h4>Schedule a call appointment</h4>
