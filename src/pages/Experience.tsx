@@ -84,14 +84,14 @@ export default function Experience() {
                 <i>09/2024 - 02/2025 ~ </i>
                 <b>Web Developer</b>
                </p>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, ullam accusamus aperiam sunt voluptatum animi illo sint ad at unde est magnam hic?</p>
+               <p>I was doing an intern at Digimizu while im still in high school this experience provide me with lot of benefit, one of which is Wordpress. While i was there they gave me a task to create an School website made entirely using wordpress for some state school. while doing so i get a lot of knowledge of how wordpress, cms, and wordpress theme(Divi in particular) work. so that made me realize how i can build a website with no code entirely just using this kind of tool</p>
                <br />
                <b>Freelance</b>
                <p>
                 <i>02/2025 - present ~ </i>
                 <b>Front-end engineer, Web Developer, Android App Developer</b>
                </p>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, ullam accusamus aperiam sunt voluptatum animi illo sint ad at unde est magnam hic?</p>
+               <p>Now after finishing my graduate at SMKN 5 Surakarta i find myself having a  trouble at finding a job that is relevant so i try to force myself to try or at least doing something that is (kinda) productive in my free time. So i made bunch of app and also this website while waiting for me to go to college</p>
             </p>
             <br />
             <h4>Volunteer Experience</h4>
@@ -102,7 +102,7 @@ export default function Experience() {
                 <i>09/2024 - 02/2025 ~ </i>
                 <b>Web Developer</b>
                </p>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, ullam accusamus aperiam sunt voluptatum animi illo sint ad at unde est magnam hic?</p>
+               <p>When im still in High School my aunt ask me to build her a website that is call POS PSIKOLOGI so i Volunteeraly doing just that</p>
             </p>
            </div>
         </div>

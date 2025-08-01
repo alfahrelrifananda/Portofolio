@@ -15,7 +15,7 @@ export default function Contact() {
             </p>
             <br />
             <p>
-              Want to connect on Telegram? <a href="https://t.me/Nexuuussss">Feel free to add me.</a> 
+              Want to connect on Instagram? <a href="https://www.instagram.com/fr3l_r?igsh=OTdvYXo3NzIzZ2xs">Feel free to DM me.</a> 
             </p>
             <br />
             <p>

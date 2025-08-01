@@ -12,7 +12,7 @@ export default function Footer() {
                 This means a simple, content-first website, sharing thoughts and knowledge for free.
             </p>
             <p>
-                This is why this website has no trackers, no ads and no requirement to run PHP.
+                This is why this website has no trackers, no ads and nothing.
             </p>
             <br />
             <p>

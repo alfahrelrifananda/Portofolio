@@ -24,7 +24,7 @@ export default function Nav() {
                     <Link to="/experience" className={Style.a}>Experience</Link>
                 </li>
                 <li>
-                    <Link to="/project" className={Style.a}>Project</Link>
+                    <Link to="/blog" className={Style.a}>Blog</Link>
                 </li>
                 <li>
                     <Link to="/contact" className={Style.a}>Contact</Link>

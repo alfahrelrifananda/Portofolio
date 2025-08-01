@@ -11,7 +11,7 @@ export default function Expertise() {
             <header>Skills and Expertise</header>
             <br />
             <p>
-               With a foundational understanding in software engineering, I am constantly exploring and applying various programming languages and frameworks. While I have areas of particular interest, my approach is always to select the most suitable technology for a given project, ensuring both short-term effectiveness and long-term maintainability.
+               With a foundational understanding in software engineering, Im lways exploring and applying various programming languages and frameworks. While I have areas of particular interest, my approach is always to select the most suitable technology for a given project, ensuring both short-term effectiveness and long-term maintainability.
             </p>
             <br />
             <h4>Technologies Used</h4>
@@ -122,12 +122,6 @@ export default function Expertise() {
                     <li>
                         Utilizing Git for collaborative development and tracking changes.
                     </li>
-                    <li>
-                        Embracing new technologies and best practices to improve my skills.
-                    </li>
-                    <li>
-                        Approaching challenges with a logical and structured mindset.
-                    </li>
                </ul>
             </p>
             <br />
@@ -136,7 +130,7 @@ export default function Expertise() {
             <h4>Learning</h4>
             <br />
             <p>
-              I am committed to continuous self-education, constantly expanding my knowledge in computer science and beyond. My learning journey also extends to subjects like philosophy and history. These diverse interests enrich my perspective and enhance my analytical thinking.
+              I am committed to continuous self-education, constantly expanding my knowledge in computer science.
             </p>
             <br />
         </div>
