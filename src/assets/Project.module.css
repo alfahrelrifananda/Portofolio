@@ -1,0 +1,22 @@
+.container {
+    padding-top: var(--padding-vertical);
+    padding-bottom: var(--padding-vertical);
+    width: var(--container-width);
+    min-height: var(--container-height);
+}
+.container header {
+  font-size: var(--header-size);
+  line-height: var(--header-line-height);
+  font-weight: var(--bold);
+}
+
+.container h4 {
+  font-size: var(--subheader-size);
+  line-height: var(--subheader-line-height);
+  font-weight: var(--bold);
+}
+
+.container p {
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+}

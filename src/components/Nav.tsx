@@ -23,6 +23,9 @@ export default function Nav() {
                 <li>
                     <Link to="/experience" className={Style.a}>Experience</Link>
                 </li>
+                 <li>
+                    <Link to="/project" className={Style.a}>Project</Link>
+                </li>
                 <li>
                     <Link to="/blog" className={Style.a}>Blog</Link>
                 </li>
