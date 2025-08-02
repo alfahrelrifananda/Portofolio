@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { Routes, HashRouter, Route } from 'react-router'
+import { Routes, Route, BrowserRouter } from 'react-router'
 import './index.css'
 import App from './App.tsx'
 import About from './pages/About.tsx'
@@ -12,7 +12,7 @@ import Project from './pages/Project.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<App/>}/>
         <Route path="/about" element={<About/>}/>
@@ -22,6 +22,6 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/blog" element={<Blog/>}/>
         <Route path="/contact" element={<Contact/>}/>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   </StrictMode>,
 )
