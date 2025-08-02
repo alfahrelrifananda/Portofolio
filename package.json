@@ -1,6 +1,6 @@
 {
   "name": "portofolio",
-  "homepage": "https://alfahrelrifananda.github.io/",
+  "homepage": "https://alfahrelrifananda.my.id/",
   "private": false,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,6 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "copy": "cp ./CNAME ./build/CNAME",
     "predeploy": "npm  run build",
     "deploy": "gh-pages -d dist"
   },
