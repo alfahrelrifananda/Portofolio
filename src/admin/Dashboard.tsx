@@ -1,14 +1,17 @@
 import Footer from '../components/Footer'
 import Nav from '../components/Nav'
-import Style from '../assets/Blog.module.css'
+import Style from '../assets/Dashboard.module.css'
 import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js"
 import { Routes, Route, useNavigate, useParams } from 'react-router-dom'
+import CreatePost from './CreatePost'
 
 const supabase = createClient(
     import.meta.env.VITE_SUPABASE_URL,
     import.meta.env.VITE_SUPABASE_ANON_KEY
 );
+
+const adminDashboardInside = import.meta.env.VITE_DASHBOARD_URL_INSIDE
 
 interface Post {
   id: string;
@@ -21,6 +24,23 @@ interface Post {
 }
 
 const supabaseClient = {
+  async createPost(post: Omit<Post, 'id'>): Promise<Post> {
+    const { data, error } = await supabase
+      .from('posts')
+      .insert([{
+        title: post.title,
+        content: post.content,
+        read_time: post.read_time,
+        date: post.date,
+        categories: post.categories,
+        tags: post.tags
+      }])
+      .select()
+      .single();
+    
+    if (error) throw error;
+    return data;
+  },
   
   async getPosts(): Promise<Post[]> {
     const { data, error } = await supabase
@@ -81,14 +101,19 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
 
   const handleViewPost = (post: Post) => {
     const slug = createSlug(post.title);
-    navigate(`${slug}`);
+    navigate(`${adminDashboardInside}/${slug}`);
   };
 
   return (
     <div className={Style.mainContainer}>
       <div className={Style.header}>
-        <h1 className={Style.mainTitle}>My recent Blog </h1>
-        <p>This is where i post everything i could think of.</p>
+        <h1 className={Style.mainTitle}>Blog Posts</h1>
+        <button
+          onClick={() => navigate(`${adminDashboardInside}/create`)}
+          className={Style.createButton}
+        >
+          Create New Post
+        </button>
       </div>
 
       <div className={Style.categoryFilter}>
@@ -115,6 +140,7 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
           {posts.length === 0 ? (
             <>
               <p className={Style.emptyTitle}>No posts yet</p>
+              <p>Create your first post to get started!</p>
             </>
           ) : (
             <>
@@ -152,6 +178,7 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
 
 const PostView = ({ posts }: { posts: Post[] }) => {
   const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
   const post = slug ? findPostBySlug(posts, slug) : null;
 
   if (!post) {
@@ -214,6 +241,36 @@ const PostView = ({ posts }: { posts: Post[] }) => {
   );
 };
 
+const CreatePostWrapper = ({ onSave }: { onSave: (post: Omit<Post, 'id'>) => Promise<void> }) => {
+  const navigate = useNavigate();
+  const [saving, setSaving] = useState(false);
+
+  const handleSave = async (postData: Omit<Post, 'id'>) => {
+    setSaving(true);
+    try {
+      await onSave(postData);
+      navigate(`${adminDashboardInside}`);
+    } catch (error) {
+      console.error('Error creating post:', error);
+      alert('Failed to create post');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleBack = () => {
+    navigate(`${adminDashboardInside}`);
+  };
+
+  return (
+    <CreatePost
+      onSave={handleSave}
+      onBack={handleBack}
+      saving={saving}
+    />
+  );
+};
+
 export default function Dashboard() {
     const [posts, setPosts] = useState<Post[]>([]);
     const [loading, setLoading] = useState(true);
@@ -233,6 +290,10 @@ export default function Dashboard() {
         }
     };
 
+    const handleSavePost = async (postData: Omit<Post, 'id'>) => {
+        const post = await supabaseClient.createPost(postData);
+        setPosts(prev => [post, ...prev]);
+    };
 
     if (loading) {
         return (
@@ -246,6 +307,7 @@ export default function Dashboard() {
           <Nav/>
              <Routes>
                 <Route path="/" element={<PostsList posts={posts} />} />
+                <Route path="/create" element={<CreatePostWrapper onSave={handleSavePost} />} />
                 <Route path="/:slug" element={<PostView posts={posts} />} />
             </Routes>
           <Footer/>

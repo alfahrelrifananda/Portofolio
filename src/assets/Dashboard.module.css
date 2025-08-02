@@ -31,6 +31,9 @@
 }
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: var(--padding-vertical);
 }
 
@@ -40,11 +43,22 @@
   margin: 0;
 }
 
+.createButton {
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+  color: var(--raw-umber);
+  background-color: transparent;
+  border: none;
+  font-weight: 500;
+}
+
+.createButton:hover {
+  color: var(--hover-text);
+  text-decoration: underline;
+}
+
+
 .categoryFilter {
-  display: flex;
-  justify-content: center;
-  align-items:center;
-  flex-direction: column;
   margin-bottom: 24px;
 }
 

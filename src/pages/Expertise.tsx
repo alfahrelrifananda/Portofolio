@@ -11,7 +11,10 @@ export default function Expertise() {
             <header>Skills and Expertise</header>
             <br />
             <p>
-               With a foundational understanding in software engineering, Im lways exploring and applying various programming languages and frameworks. While I have areas of particular interest, my approach is always to select the most suitable technology for a given project, ensuring both short-term effectiveness and long-term maintainability.
+              With a foundational understanding in <b>software engineering and web dev</b> I'm always exploring and applying various programming languages and frameworks. 
+              <br />
+              <br />
+              While I have areas of particular interest, my approach is <b> always to select the most suitable technology for a given project,</b> ensuring both short-term effectiveness and long-term maintainability.
             </p>
             <br />
             <h4>Technologies Used</h4>

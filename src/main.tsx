@@ -9,6 +9,9 @@ import Experience from './pages/Experience.tsx'
 import Contact from './pages/Contact.tsx'
 import Blog from './pages/Blog.tsx'
 import Project from './pages/Project.tsx'
+import Dashboard from './admin/Dashboard.tsx'
+
+const adminDashboard = import.meta.env.VITE_DASHBOARD_URL
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -19,8 +22,9 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/expertise" element={<Expertise/>}/>
         <Route path="/experience" element={<Experience/>}/>
         <Route path="/project" element={<Project/>}/>
-        <Route path="/blog" element={<Blog/>}/>
+        <Route path="/blog/*" element={<Blog/>}/>
         <Route path="/contact" element={<Contact/>}/>
+        <Route path={adminDashboard} element={<Dashboard/>}/>
       </Routes>
     </BrowserRouter>
   </StrictMode>,
