@@ -178,7 +178,6 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
 
 const PostView = ({ posts }: { posts: Post[] }) => {
   const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
   const post = slug ? findPostBySlug(posts, slug) : null;
 
   if (!post) {

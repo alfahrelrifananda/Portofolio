@@ -17,7 +17,7 @@ interface CreatePostProps {
   saving: boolean;
 }
 
-const CreatePost: React.FC<CreatePostProps> = ({ onSave, onBack, saving }) => {
+const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [categories, setCategories] = useState<string[]>([]);
