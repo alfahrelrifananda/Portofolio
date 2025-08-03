@@ -102,15 +102,7 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
 
   return (
     <div className={Style.mainContainer}>
-      <div className={Style.header}>
-        <button
-          onClick={handleSave}
-          disabled={saving}
-          className={Style.saveButton}
-        >
-          {saving ? 'Saving...' : 'Save Post'}
-        </button>
-      </div>
+    
 
       <div className={Style.formGrid}>
         {/* Title */}
@@ -217,23 +209,6 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
               >
                 <u>U</u>
               </button>
-              
-              <button
-                type="button"
-                onClick={() => execCommand('insertUnorderedList')}
-                className={Style.toolbarButton}
-                title="Bullet List"
-              >
-                • List
-              </button>
-              <button
-                type="button"
-                onClick={() => execCommand('insertOrderedList')}
-                className={Style.toolbarButton}
-                title="Numbered List"
-              >
-                1. List
-              </button>
               <button
                 type="button"
                 onClick={() => {
@@ -306,8 +281,8 @@ console.log('Hello World!');</code></pre>`;
                 onChange={(e) => execCommand('fontSize', e.target.value)}
                 className={Style.toolbarSelect}
               >
-                <option value="3">Normal</option>
                 <option value="1">Small</option>
+                <option value="3">Normal</option>
                 <option value="4">Large</option>
                 <option value="5">X-Large</option>
                 <option value="6">XX-Large</option>
@@ -341,6 +316,17 @@ console.log('Hello World!');</code></pre>`;
             />
           </div>
         </div>
+
+
+        <div className={Style.header}>
+        <button
+          onClick={handleSave}
+          disabled={saving}
+          className={Style.saveButton}
+        >
+          {saving ? 'Saving...' : 'Save Post'}
+        </button>
+      </div>
       </div>
     </div>
   );

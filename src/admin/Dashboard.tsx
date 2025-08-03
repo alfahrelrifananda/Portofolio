@@ -299,9 +299,6 @@ export default function Dashboard() {
         <>
           <Nav/>
            <div className={Style.mainContainer}>
-              <div className={Style.header}>
-                <h1 className={Style.mainTitle}>Blog Posts </h1>
-              </div>
               <div className={Style.loadingContainer}>
                 <div>Loading...</div>
               </div>

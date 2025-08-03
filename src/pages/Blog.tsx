@@ -215,7 +215,7 @@ const PostView = ({ posts }: { posts: Post[] }) => {
   );
 };
 
-export default function Dashboard() {
+export default function Blog() {
     const [posts, setPosts] = useState<Post[]>([]);
     const [loading, setLoading] = useState(true);
 

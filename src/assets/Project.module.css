@@ -1,9 +1,3 @@
-.container {
-    padding-top: var(--padding-vertical);
-    padding-bottom: var(--padding-vertical);
-    width: var(--container-width);
-    min-height: var(--container-height);
-}
 .container header {
   font-size: var(--header-size);
   line-height: var(--header-line-height);
@@ -19,4 +13,111 @@
 .container p {
   font-size: var(--body-size);
   line-height: var(--body-line-height);
+}
+
+.loadingContainer {
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+}
+
+.mainContainer {
+  padding-top: var(--padding-vertical);
+  padding-bottom: var(--padding-vertical);
+  min-height: var(--container-height);
+}
+
+.header {
+  margin-bottom: var(--padding-vertical);
+}
+
+.mainTitle {
+  font-size: var(--header-size);
+  font-weight: bold;
+  margin: 0;
+}
+
+.filterInfo {
+  font-size: 0.875rem;
+  margin-top: 8px;
+}
+
+
+.postsGrid {
+  display: grid;
+  gap: 24px;
+}
+
+.postCard {
+  cursor: pointer;
+}
+.postCardContent {
+  border-bottom:1px solid var(--color);
+}
+
+.postCardMain {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+
+.postTitle {
+  font-size: var(--subheader-size);
+  line-height: var(--subheader-line-height);
+}
+
+.postTitle:hover {
+  text-decoration: underline;
+}
+
+.postMeta {
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+}
+
+.articleContainer {
+  margin: 0 auto;
+  width: var(--container-post-width);
+}
+
+.articleHeader {
+  margin-bottom: 32px;
+}
+
+.articleTitle {
+  margin-bottom: var(--padding-vertical);
+  font-size: var(--header-size);
+  line-height:var(--header-line-height);
+}
+
+.articleMeta {
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+}
+
+.articleMetaItemDate {
+  margin-bottom: var(--padding-vertical);
+  font-size: var(--header-size);
+  line-height:var(--header-line-height);
+}
+
+.articleCategoryTag {
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+}
+.articleCategoryTagChild {
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+  color: var(--raw-umber);
+  background-color: transparent;
+  border: none;
+  font-weight: 500;
+}
+.articleTagItem {
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+  color: var(--raw-umber);
+  background-color: transparent;
+  border: none;
+  font-weight: 500;
+  margin-right: var(--body-size);
 }
