@@ -180,6 +180,8 @@
   width: 100%;
 }
 
-ul, ol {
+
+.editorContent ul,
+.editorContent ol {
   padding-left: 36px;
 }

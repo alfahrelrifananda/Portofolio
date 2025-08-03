@@ -126,7 +126,8 @@
   margin-right: var(--body-size);
 }
 
-ul, ol {
+.articleContainer ul,
+.articleContainer ol {
   padding-left: 36px;
 }
 
