@@ -174,3 +174,7 @@
   line-height: normal;
   padding: 12px;
 }
+
+.editorContent img {
+  width: 100%;
+}

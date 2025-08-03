@@ -87,7 +87,7 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
   return (
     <div className={Style.mainContainer}>
       <div className={Style.header}>
-        <h1 className={Style.mainTitle}>My recent Blog </h1>
+        <h1 className={Style.mainTitle}>My Blogs</h1>
         <br />
         <p>This is where i post everything i could think of.</p>
       </div>
@@ -241,7 +241,7 @@ export default function Blog() {
           <Nav/>
            <div className={Style.mainContainer}>
               <div className={Style.header}>
-                <h1 className={Style.mainTitle}>My recent Blog </h1>
+                <h1 className={Style.mainTitle}>My Blogs</h1>
                 <br />
                 <p>This is where i post everything i could think of.</p>
               </div>

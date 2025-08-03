@@ -128,9 +128,13 @@
 
 .articleContainer {
   margin: 0 auto;
+  overflow-x: hidden;
+  margin-bottom: var(--padding-vertical);
   width: var(--container-post-width);
 }
-
+.articleContainer img {
+  width: 100%;
+}
 .articleHeader {
   margin-bottom: 32px;
 }
@@ -172,4 +176,11 @@
   border: none;
   font-weight: 500;
   margin-right: var(--body-size);
+}
+
+@media screen and (max-width: 1000px) {
+  .postCardMain {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
 }

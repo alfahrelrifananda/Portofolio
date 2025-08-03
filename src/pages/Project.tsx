@@ -82,9 +82,10 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
   return (
     <div className={Style.mainContainer}>
       <div className={Style.header}>
-        <h1 className={Style.mainTitle}>All of my Projects</h1>
+        <h1 className={Style.mainTitle}>Projects</h1>
         <br />
         <p>I post all of my project here.</p>
+        <br />
       </div>
 
       {filteredPosts.length === 0 ? (
@@ -216,7 +217,7 @@ export default function Project() {
           <Nav/>
            <div className={Style.mainContainer}>
                <div className={Style.header}>
-                <h1 className={Style.mainTitle}>All of my Projects</h1>
+                <h1 className={Style.mainTitle}>Projects</h1>
                 <br />
                 <p>I post all of my project here.</p>
               </div>

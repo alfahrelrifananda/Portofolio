@@ -22,6 +22,7 @@
     display: flex;
     opacity: .9;
     gap: 20px;
+    z-index: 99;
 }
 .Navbar ul li {
     list-style: none;
