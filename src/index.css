@@ -51,6 +51,8 @@
     :root {
       /* Width */
       --container-width: 100%;
+      --container-post-width: 100%;
+      
       /* Padding  */
       --padding-horizontal: 5vw;
       --padding-vertical: 5vw;

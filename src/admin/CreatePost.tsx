@@ -40,7 +40,7 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
     if (file) {
       const reader = new FileReader();
       reader.onload = (event) => {
-        const img = `<img src="${event.target?.result}" style="max-width: 100%; height: auto; margin: 10px 0;" alt="Uploaded image" />`;
+        const img = `<img src="${event.target?.result}" style="max-width: 100%; height: auto;" alt="Uploaded image" />`;
         document.execCommand('insertHTML', false, img);
         if (editorRef.current) {
           setContent(editorRef.current.innerHTML);
@@ -225,7 +225,7 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
                 className={Style.toolbarButton}
                 title="Add Link"
               >
-                🔗 Link
+                Link
               </button>
               <button
                 type="button"
@@ -245,7 +245,7 @@ console.log('Hello World!');</code></pre>`;
                 className={Style.toolbarButton}
                 title="Code Block/Inline Code"
               >
-                &lt;/&gt; Code
+                Code
               </button>
               
               <div className={Style.toolbarDivider}></div>
@@ -256,7 +256,7 @@ console.log('Hello World!');</code></pre>`;
                 className={Style.toolbarButton}
                 title="Align Left"
               >
-                ⬅️
+                Left
               </button>
               <button
                 type="button"
@@ -264,7 +264,7 @@ console.log('Hello World!');</code></pre>`;
                 className={Style.toolbarButton}
                 title="Align Center"
               >
-                ↔️
+                Center
               </button>
               <button
                 type="button"
@@ -272,7 +272,7 @@ console.log('Hello World!');</code></pre>`;
                 className={Style.toolbarButton}
                 title="Align Right"
               >
-                ➡️
+                Right
               </button>
               
               <div className={Style.toolbarDivider}></div>
@@ -281,8 +281,8 @@ console.log('Hello World!');</code></pre>`;
                 onChange={(e) => execCommand('fontSize', e.target.value)}
                 className={Style.toolbarSelect}
               >
-                <option value="1">Small</option>
                 <option value="3">Normal</option>
+                <option value="1">Small</option>
                 <option value="4">Large</option>
                 <option value="5">X-Large</option>
                 <option value="6">XX-Large</option>
@@ -294,7 +294,7 @@ console.log('Hello World!');</code></pre>`;
                 className={Style.toolbarButton}
                 title="Insert Image"
               >
-                🖼️
+                Insert Image
               </button>
               
               <input
