@@ -236,7 +236,22 @@ export default function Dashboard() {
 
 
     if (loading) {
-        return null
+       return (
+        <>
+          <Nav/>
+           <div className={Style.mainContainer}>
+              <div className={Style.header}>
+                <h1 className={Style.mainTitle}>My recent Blog </h1>
+                <br />
+                <p>This is where i post everything i could think of.</p>
+              </div>
+              <div className={Style.loadingContainer}>
+                <div>Loading...</div>
+              </div>
+            </div>
+          <Footer/>
+        </>
+       )
     }
         return (
         <>
