@@ -148,7 +148,8 @@
 }
 
 .toolbarButton:hover {
-  background-color: #e5e7eb;
+  color: var(--raw-umber);
+  text-decoration: underline;
 }
 
 .toolbarDivider {

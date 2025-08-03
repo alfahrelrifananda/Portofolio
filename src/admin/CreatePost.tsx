@@ -209,6 +209,24 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
               >
                 <u>U</u>
               </button>
+              <div className={Style.toolbarDivider}></div>
+              <button
+                type="button"
+                onClick={() => execCommand('insertUnorderedList')}
+                className={Style.toolbarButton}
+                title="Bullet List"
+              >
+                • List
+              </button>
+              <button
+                type="button"
+                onClick={() => execCommand('insertOrderedList')}
+                className={Style.toolbarButton}
+                title="Numbered List"
+              >
+                1. List
+              </button>
+              <div className={Style.toolbarDivider}></div>
               <button
                 type="button"
                 onClick={() => {
