@@ -179,3 +179,7 @@
 .editorContent img {
   width: 100%;
 }
+
+ul, ol {
+  padding-left: 36px;
+}

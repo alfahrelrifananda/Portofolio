@@ -126,6 +126,11 @@
   margin-right: var(--body-size);
 }
 
+ul, ol {
+  padding-left: 36px;
+}
+
+
 @media screen and (max-width: 1000px) {
   .postCardMain {
     flex-direction: column-reverse;

@@ -47,10 +47,6 @@
 
 }
 
-ul, ol {
-  padding-left: 36px;
-}
-
 button {
   font-family: "Roboto Mono", monospace;
 }
@@ -59,7 +55,7 @@ button {
       /* Width */
       --container-width: 100%;
       --container-post-width: 100%;
-      --container-height: 70svh;
+      --container-height: 75svh;
 
       /* Padding  */
       --padding-horizontal: 5vw;
