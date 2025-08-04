@@ -128,10 +128,12 @@
   border: 1px solid var(--color);
   margin-bottom: var(--padding-vertical);
   overflow: hidden;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .editorToolbar {
-  background-color: transparent;
+  background-color: var(--color);
   border-bottom: 1px solid var(--color);
   padding: 8px;
   display: flex;
@@ -145,6 +147,7 @@
   border: none;
   cursor: pointer;
   border-radius: 4px;
+  color: var(--background-color);
 }
 
 .toolbarButton:hover {
@@ -154,7 +157,7 @@
 
 .toolbarDivider {
   width: 1px;
-  background-color: var(--color);
+  background-color: var(--background-color);
   margin: 0 4px;
 }
 

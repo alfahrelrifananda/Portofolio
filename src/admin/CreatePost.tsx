@@ -105,7 +105,6 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
     
 
       <div className={Style.formGrid}>
-        {/* Title */}
         <div className={Style.formGroup}>
           <label className={Style.formLabel}>Title</label>
           <input
@@ -117,7 +116,6 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
           />
         </div>
 
-        {/* Categories */}
         <div className={Style.formGroup}>
           <label className={Style.formLabel}>Categories</label>
           <div className={Style.tagInputGroup}>
@@ -148,7 +146,6 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
           </div>
         </div>
 
-        {/* Tags */}
         <div className={Style.formGroup}>
           <label className={Style.formLabel}>Tags</label>
           <div className={Style.tagInputGroup}>
@@ -179,11 +176,9 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
           </div>
         </div>
 
-        {/* Rich Text Editor */}
         <div className={Style.formGroup}>
           <label className={Style.formLabel}>Content</label>
           <div className={Style.editorContainer}>
-            {/* Toolbar */}
             <div className={Style.editorToolbar}>
               <button
                 type="button"
@@ -225,6 +220,14 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
                 title="Numbered List"
               >
                 1. List
+              </button>
+              <button
+                type="button"
+                onClick={() => execCommand('insertHorizontalRule')}
+                className={Style.toolbarButton}
+                title="Add A Divider"
+              >
+                Hr
               </button>
               <div className={Style.toolbarDivider}></div>
               <button

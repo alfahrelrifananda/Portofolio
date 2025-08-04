@@ -107,7 +107,7 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
   return (
     <div className={Style.mainContainer}>
       <div className={Style.header}>
-        <h1 className={Style.mainTitle}>Blog Posts</h1>
+        <h1 className={Style.mainTitle}>Dashboard</h1>
         <button
           onClick={() => navigate(`${adminDashboardInside}/create`)}
           className={Style.createButton}
