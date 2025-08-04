@@ -88,7 +88,7 @@
 }
 
 .articleTitle {
-  margin-bottom: var(--padding-vertical);
+  margin-bottom: var(--padding-vertical-small);
   font-size: var(--header-size);
   line-height:var(--header-line-height);
 }
@@ -99,11 +99,10 @@
 }
 
 .articleMetaItemDate {
-  margin-bottom: var(--padding-vertical);
+  margin-bottom: var(--padding-vertical-small);
   font-size: var(--header-size);
   line-height:var(--header-line-height);
 }
-
 .articleCategoryTag {
   font-size: var(--body-size);
   line-height: var(--body-line-height);

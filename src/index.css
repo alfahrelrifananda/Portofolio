@@ -16,6 +16,7 @@
   /* Padding  */
   --padding-horizontal: 7vw;
   --padding-vertical: 7vh;
+  --padding-vertical-small: 3vh;
 
   /* Font Weight */
   --bold: 700;
@@ -60,6 +61,7 @@ button {
       /* Padding  */
       --padding-horizontal: 5vw;
       --padding-vertical: 5vw;
+      --padding-vertical-small: 5vw;
 
       /* Font Size */
       --header-size: 28px;

@@ -81,7 +81,8 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
 
   const handleViewPost = (post: Post) => {
     const slug = createSlug(post.title);
-    navigate(`${slug}`);
+    navigate(`${slug}`, { preventScrollReset: false });
+
   };
 
   return (
