@@ -1,13 +1,13 @@
-import Footer from '../components/Footer'
-import Nav from '../components/Nav'
-import Style from '../assets/Project.module.css'
+import Footer from "../components/Footer";
+import Nav from "../components/Nav";
+import Style from "../assets/Project.module.css";
 import { useState, useEffect } from "react";
-import { createClient } from "@supabase/supabase-js"
-import { Routes, Route, useNavigate, useParams } from 'react-router-dom'
+import { createClient } from "@supabase/supabase-js";
+import { Routes, Route, useNavigate, useParams } from "react-router-dom";
 
 const supabase = createClient(
-    import.meta.env.VITE_SUPABASE_URL,
-    import.meta.env.VITE_SUPABASE_ANON_KEY
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
 );
 
 interface Post {
@@ -21,24 +21,23 @@ interface Post {
 }
 
 const supabaseClient = {
-  
   async getPosts(): Promise<Post[]> {
     const { data, error } = await supabase
-      .from('posts')
-      .select('*')
-      .order('date', { ascending: false });
-    
+      .from("posts")
+      .select("*")
+      .order("date", { ascending: false });
+
     if (error) throw error;
     return data || [];
   },
-  
+
   async getPost(id: string): Promise<Post | null> {
     const { data, error } = await supabase
-      .from('posts')
-      .select('*')
-      .eq('id', id)
+      .from("posts")
+      .select("*")
+      .eq("id", id)
       .single();
-    
+
     if (error) return null;
     return data;
   },
@@ -47,30 +46,32 @@ const supabaseClient = {
 const createSlug = (title: string): string => {
   return title
     .toLowerCase()
-    .replace(/[^a-z0-9 -]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
+    .replace(/[^a-z0-9 -]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
     .trim();
 };
 
 const findPostBySlug = (posts: Post[], slug: string): Post | null => {
-  return posts.find(post => createSlug(post.title) === slug) || null;
+  return posts.find((post) => createSlug(post.title) === slug) || null;
 };
 
 const PostsList = ({ posts }: { posts: Post[] }) => {
   const navigate = useNavigate();
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
-  const [selectedCategory] = useState<string>('Projects');
+  const [selectedCategory] = useState<string>("Projects");
 
   useEffect(() => {
     filterPosts();
   }, [posts, selectedCategory]);
 
   const filterPosts = () => {
-    if (selectedCategory === 'All') {
+    if (selectedCategory === "All") {
       setFilteredPosts(posts);
     } else {
-      setFilteredPosts(posts.filter(post => post.categories.includes(selectedCategory)));
+      setFilteredPosts(
+        posts.filter((post) => post.categories.includes(selectedCategory))
+      );
     }
   };
 
@@ -110,10 +111,8 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
             >
               <div className={Style.postCardContent}>
                 <div className={Style.postCardMain}>
-                  <h2 className={Style.postTitle}>
-                    {post.title}
-                  </h2>
-                  
+                  <h2 className={Style.postTitle}>{post.title}</h2>
+
                   <div className={Style.postMeta}>
                     <span> {new Date(post.date).toLocaleDateString()}</span>
                   </div>
@@ -136,7 +135,9 @@ const PostView = ({ posts }: { posts: Post[] }) => {
       <div className={Style.mainContainer}>
         <div className={Style.emptyState}>
           <p className={Style.emptyTitle}>Post not found</p>
-          <p>The post you're looking for doesn't exist or may have been removed.</p>
+          <p>
+            The post you're looking for doesn't exist or may have been removed.
+          </p>
         </div>
       </div>
     );
@@ -144,27 +145,28 @@ const PostView = ({ posts }: { posts: Post[] }) => {
 
   return (
     <div className={Style.mainContainer}>
-
       <article className={Style.articleContainer}>
         <header className={Style.articleHeader}>
-          <h1 className={Style.articleTitle}>
-            {post.title}
-          </h1>
-          
+          <h1 className={Style.articleTitle}>{post.title}</h1>
+
           <div className={Style.articleMeta}>
             <div className={Style.articleMetaItemDate}>
               {new Date(post.date).toLocaleDateString()}
             </div>
             <div className={Style.articleMetaItem}>
-              <b>Reading time: </b>{post.read_time} minutes
+              <b>Reading time: </b>
+              {post.read_time} minutes
             </div>
           </div>
 
           {post.categories.length > 0 && (
             <div className={Style.articleCategories}>
-              {post.categories.map(category => (
+              {post.categories.map((category) => (
                 <span key={category} className={Style.articleCategoryTag}>
-                  <b>Categories: </b> <span className={Style.articleCategoryTagChild}>{category}</span>
+                  <b>Categories: </b>{" "}
+                  <span className={Style.articleCategoryTagChild}>
+                    {category}
+                  </span>
                 </span>
               ))}
             </div>
@@ -173,7 +175,7 @@ const PostView = ({ posts }: { posts: Post[] }) => {
           {post.tags.length > 0 && (
             <div className={Style.articleTags}>
               <b>Tags: </b>
-              {post.tags.map(tag => (
+              {post.tags.map((tag) => (
                 <span key={tag} className={Style.articleTagItem}>
                   #{tag}
                 </span>
@@ -181,8 +183,8 @@ const PostView = ({ posts }: { posts: Post[] }) => {
             </div>
           )}
         </header>
-        
-        <div 
+
+        <div
           className={Style.articleContent}
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
@@ -192,51 +194,50 @@ const PostView = ({ posts }: { posts: Post[] }) => {
 };
 
 export default function Project() {
-    const [posts, setPosts] = useState<Post[]>([]);
-    const [loading, setLoading] = useState(true);
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        loadPosts();
-    }, []);
+  useEffect(() => {
+    loadPosts();
+  }, []);
 
-    const loadPosts = async () => {
-        try {
-        const fetchedPosts = await supabaseClient.getPosts();
-        setPosts(fetchedPosts);
-        } catch (error) {
-        console.error('Error loading posts:', error);
-        } finally {
-        setLoading(false);
-        }
-    };
-
-
-    if (loading) {
-       return (
-        <>
-          <Nav/>
-           <div className={Style.mainContainer}>
-               <div className={Style.header}>
-                <h1 className={Style.mainTitle}>Projects</h1>
-                <br />
-                <p>I post all of my project here.</p>
-              </div>
-              <div className={Style.loadingContainer}>
-                <div>Loading...</div>
-              </div>
-            </div>
-          <Footer/>
-        </>
-       )
+  const loadPosts = async () => {
+    try {
+      const fetchedPosts = await supabaseClient.getPosts();
+      setPosts(fetchedPosts);
+    } catch (error) {
+      console.error("Error loading posts:", error);
+    } finally {
+      setLoading(false);
     }
-        return (
-        <>
-          <Nav/>
-             <Routes>
-                <Route path="/" element={<PostsList posts={posts} />} />
-                <Route path="/:slug" element={<PostView posts={posts} />} />
-            </Routes>
-          <Footer/>
-        </>
-    )
+  };
+
+  if (loading) {
+    return (
+      <>
+        <Nav />
+        <div className={Style.mainContainer}>
+          <div className={Style.header}>
+            <h1 className={Style.mainTitle}>Projects</h1>
+            <br />
+            <p>I post all of my project here.</p>
+          </div>
+          <div className={Style.loadingContainer}>
+            <div>Loading...</div>
+          </div>
+        </div>
+        <Footer />
+      </>
+    );
+  }
+  return (
+    <>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<PostsList posts={posts} />} />
+        <Route path="/:slug" element={<PostView posts={posts} />} />
+      </Routes>
+      <Footer />
+    </>
+  );
 }
