@@ -88,7 +88,7 @@
   cursor: pointer;
 }
 .postCardContent {
-  border-bottom:1px solid var(--color);
+  border-bottom: 1px solid var(--color);
 }
 
 .postCardMain {
@@ -128,7 +128,7 @@
 .articleTitle {
   margin-bottom: var(--padding-vertical-small);
   font-size: var(--header-size);
-  line-height:var(--header-line-height);
+  line-height: var(--header-line-height);
 }
 
 .articleMeta {
@@ -139,7 +139,7 @@
 .articleMetaItemDate {
   margin-bottom: var(--padding-vertical-small);
   font-size: var(--header-size);
-  line-height:var(--header-line-height);
+  line-height: var(--header-line-height);
 }
 
 .articleCategoryTag {
@@ -164,7 +164,7 @@
   margin-right: var(--body-size);
 }
 
-.articleContainer ul, 
+.articleContainer ul,
 .articleContainer ol {
   padding-left: 36px;
 }

@@ -1,7 +1,7 @@
 .container {
-    padding-top: var(--padding-vertical);
-    padding-bottom: var(--padding-vertical);
-    min-height: var(--container-height);
+  padding-top: var(--padding-vertical);
+  padding-bottom: var(--padding-vertical);
+  min-height: var(--container-height);
 }
 .container header {
   font-size: var(--header-size);
@@ -9,34 +9,35 @@
   font-weight: var(--bold);
 }
 .container .content {
-    width: var(--container-width);
+  width: var(--container-width);
 }
 
 .container .tableContent {
-    overflow: auto;
+  overflow: auto;
 }
 .container table {
-    width: 1500px;
+  width: 1500px;
 }
 
-.container td, th {
-    text-align: left;
-    padding: 1vw;
-    border-right:1px solid var(--color);
-    border-top:1px solid var(--color);
+.container td,
+th {
+  text-align: left;
+  padding: 1vw;
+  border-right: 1px solid var(--color);
+  border-top: 1px solid var(--color);
 }
 
 .container th {
-    border-top:1px solid transparent;
-    border-right:1px solid var(--color);
+  border-top: 1px solid transparent;
+  border-right: 1px solid var(--color);
 }
 
 .container th:last-child {
-    border-right: 1px solid transparent;
+  border-right: 1px solid transparent;
 }
 
 .container td:last-child {
-    border-right:1px solid transparent;
+  border-right: 1px solid transparent;
 }
 .container h4 {
   font-size: var(--subheader-size);
@@ -49,5 +50,5 @@
   line-height: var(--body-line-height);
 }
 .container ul {
-    padding-left: 3vw;
+  padding-left: 3vw;
 }

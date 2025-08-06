@@ -23,7 +23,7 @@ body {
 .jumbotron p {
   padding-top: 20px;
   padding-bottom: 32px;
-  opacity: .9;
+  opacity: 0.9;
   font-size: var(--subheader-size);
   line-height: var(--subheader-line-height);
 }
@@ -47,9 +47,9 @@ a:hover {
 }
 
 @media screen and (max-width: 1000px) {
-body {
-  overflow-x: hidden;
-}
+  body {
+    overflow-x: hidden;
+  }
   #navbar-ul.show {
     display: flex;
   }

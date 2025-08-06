@@ -1,67 +1,65 @@
 .Navbar {
-    display: flex;
-    font-size: var(--body-size);
-    line-height: var(--body-line-height);
-    justify-content: space-between;
-    padding-top: 20px;
-    font-weight: var(--bold);
-
+  display: flex;
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+  justify-content: space-between;
+  padding-top: 20px;
+  font-weight: var(--bold);
 }
 .Navbar .logo {
-    text-decoration: none;
-    color: var(--color);
+  text-decoration: none;
+  color: var(--color);
 }
 .Navbar .logo:hover {
-    color: var(--hover-text);
-    text-decoration: underline;
+  color: var(--hover-text);
+  text-decoration: underline;
 }
 .Navbar .menu {
-    display: none;
+  display: none;
 }
 .Navbar ul {
-    display: flex;
-    opacity: .9;
-    gap: 20px;
-    z-index: 99;
+  display: flex;
+  opacity: 0.9;
+  gap: 20px;
+  z-index: 99;
 }
 .Navbar ul li {
-    list-style: none;
+  list-style: none;
 }
 .Navbar ul li .a {
-    text-decoration: none;
-    color: var(--color);
+  text-decoration: none;
+  color: var(--color);
 }
 
 .Navbar ul li .a:hover {
-    color: var(--hover-text);
-    text-decoration: underline;
+  color: var(--hover-text);
+  text-decoration: underline;
 }
 @media screen and (max-width: 1000px) {
-    .Navbar .menu {
-        cursor: pointer;
-        display: block;
-    }
-    .Navbar .menu:hover {
-        color: var(--hover-text);
-        text-decoration: underline;
-    }
-    .Navbar ul {
-        display: none;
-        width: calc(50vw - 12px);
-        right: var(--padding-horizontal);
-        top: 64px;
-        opacity: 1;
-        gap: 1px;
-        background-color: var(--silver);
-        position: absolute;
-        flex-direction: column;
-    }
-    .Navbar ul li {
-        text-align: end;
-        padding-top: 12px;
-        padding-bottom: 12px;
-        padding-right: 12px;
-        background-color: var(--timberwolf);
-    }
-
+  .Navbar .menu {
+    cursor: pointer;
+    display: block;
+  }
+  .Navbar .menu:hover {
+    color: var(--hover-text);
+    text-decoration: underline;
+  }
+  .Navbar ul {
+    display: none;
+    width: calc(50vw - 12px);
+    right: var(--padding-horizontal);
+    top: 64px;
+    opacity: 1;
+    gap: 1px;
+    background-color: var(--silver);
+    position: absolute;
+    flex-direction: column;
+  }
+  .Navbar ul li {
+    text-align: end;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 12px;
+    background-color: var(--timberwolf);
+  }
 }

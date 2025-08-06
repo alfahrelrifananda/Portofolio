@@ -1,12 +1,12 @@
-Footer{
-    text-align: center;
-    padding-bottom: var(--padding-vertical);
-    font-size: var(--bodyverysmall-size);
-    line-height: var(--bodyverysmall-line-height);
+Footer {
+  text-align: center;
+  padding-bottom: var(--padding-vertical);
+  font-size: var(--bodyverysmall-size);
+  line-height: var(--bodyverysmall-line-height);
 }
 
 .copyright {
-    font-weight: 700;
-    font-size: var(--bodysmall-size);
-    line-height: var(--bodysmall-line-height);
+  font-weight: 700;
+  font-size: var(--bodysmall-size);
+  line-height: var(--bodysmall-line-height);
 }

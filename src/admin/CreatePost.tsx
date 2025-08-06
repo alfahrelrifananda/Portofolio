@@ -1,4 +1,4 @@
-import Style from '../assets/CreatePost.module.css';
+import Style from "../assets/CreatePost.module.css";
 import { useState, useRef } from "react";
 
 interface Post {
@@ -12,18 +12,18 @@ interface Post {
 }
 
 interface CreatePostProps {
-  onSave: (post: Omit<Post, 'id'>) => Promise<void>;
+  onSave: (post: Omit<Post, "id">) => Promise<void>;
   onBack: () => void;
   saving: boolean;
 }
 
 const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
   const [categories, setCategories] = useState<string[]>([]);
   const [tags, setTags] = useState<string[]>([]);
-  const [newCategory, setNewCategory] = useState('');
-  const [newTag, setNewTag] = useState('');
+  const [newCategory, setNewCategory] = useState("");
+  const [newTag, setNewTag] = useState("");
 
   const editorRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -41,7 +41,7 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
       const reader = new FileReader();
       reader.onload = (event) => {
         const img = `<img src="${event.target?.result}" style="max-width: 100%; height: auto;" alt="Uploaded image" />`;
-        document.execCommand('insertHTML', false, img);
+        document.execCommand("insertHTML", false, img);
         if (editorRef.current) {
           setContent(editorRef.current.innerHTML);
         }
@@ -57,7 +57,7 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
   };
 
   const calculateReadTime = (content: string): number => {
-    const text = content.replace(/<[^>]*>/g, '');
+    const text = content.replace(/<[^>]*>/g, "");
     const words = text.split(/\s+/).length;
     return Math.ceil(words / 200);
   };
@@ -65,28 +65,28 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
   const addCategory = () => {
     if (newCategory.trim() && !categories.includes(newCategory.trim())) {
       setCategories([...categories, newCategory.trim()]);
-      setNewCategory('');
+      setNewCategory("");
     }
   };
 
   const removeCategory = (category: string) => {
-    setCategories(categories.filter(c => c !== category));
+    setCategories(categories.filter((c) => c !== category));
   };
 
   const addTag = () => {
     if (newTag.trim() && !tags.includes(newTag.trim())) {
       setTags([...tags, newTag.trim()]);
-      setNewTag('');
+      setNewTag("");
     }
   };
 
   const removeTag = (tag: string) => {
-    setTags(tags.filter(t => t !== tag));
+    setTags(tags.filter((t) => t !== tag));
   };
 
   const handleSave = async () => {
     if (!title.trim() || !content.trim()) {
-      alert('Please fill in both title and content');
+      alert("Please fill in both title and content");
       return;
     }
 
@@ -96,14 +96,12 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
       read_time: calculateReadTime(content),
       date: new Date().toISOString(),
       categories,
-      tags
+      tags,
     });
   };
 
   return (
     <div className={Style.mainContainer}>
-    
-
       <div className={Style.formGrid}>
         <div className={Style.formGroup}>
           <label className={Style.formLabel}>Title</label>
@@ -125,14 +123,14 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
               onChange={(e) => setNewCategory(e.target.value)}
               placeholder="Add category..."
               className={Style.tagInput}
-              onKeyPress={(e) => e.key === 'Enter' && addCategory()}
+              onKeyPress={(e) => e.key === "Enter" && addCategory()}
             />
             <button onClick={addCategory} className={Style.addCategoryButton}>
               Add
             </button>
           </div>
           <div className={Style.tagsContainer}>
-            {categories.map(category => (
+            {categories.map((category) => (
               <span key={category} className={Style.categoryChip}>
                 {category}
                 <button
@@ -155,14 +153,14 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
               onChange={(e) => setNewTag(e.target.value)}
               placeholder="Add tag..."
               className={Style.tagInput}
-              onKeyPress={(e) => e.key === 'Enter' && addTag()}
+              onKeyPress={(e) => e.key === "Enter" && addTag()}
             />
             <button onClick={addTag} className={Style.addTagButton}>
               Add
             </button>
           </div>
           <div className={Style.tagsContainer}>
-            {tags.map(tag => (
+            {tags.map((tag) => (
               <span key={tag} className={Style.tagChip}>
                 #{tag}
                 <button
@@ -182,7 +180,7 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
             <div className={Style.editorToolbar}>
               <button
                 type="button"
-                onClick={() => execCommand('bold')}
+                onClick={() => execCommand("bold")}
                 className={Style.toolbarButton}
                 title="Bold"
               >
@@ -190,7 +188,7 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
               </button>
               <button
                 type="button"
-                onClick={() => execCommand('italic')}
+                onClick={() => execCommand("italic")}
                 className={Style.toolbarButton}
                 title="Italic"
               >
@@ -198,7 +196,7 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
               </button>
               <button
                 type="button"
-                onClick={() => execCommand('underline')}
+                onClick={() => execCommand("underline")}
                 className={Style.toolbarButton}
                 title="Underline"
               >
@@ -207,7 +205,7 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
               <div className={Style.toolbarDivider}></div>
               <button
                 type="button"
-                onClick={() => execCommand('insertUnorderedList')}
+                onClick={() => execCommand("insertUnorderedList")}
                 className={Style.toolbarButton}
                 title="Bullet List"
               >
@@ -215,7 +213,7 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
               </button>
               <button
                 type="button"
-                onClick={() => execCommand('insertOrderedList')}
+                onClick={() => execCommand("insertOrderedList")}
                 className={Style.toolbarButton}
                 title="Numbered List"
               >
@@ -223,7 +221,7 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
               </button>
               <button
                 type="button"
-                onClick={() => execCommand('insertHorizontalRule')}
+                onClick={() => execCommand("insertHorizontalRule")}
                 className={Style.toolbarButton}
                 title="Add A Divider"
               >
@@ -233,13 +231,16 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
               <button
                 type="button"
                 onClick={() => {
-                  const url = prompt('Enter URL:');
+                  const url = prompt("Enter URL:");
                   if (url) {
-                    const text = window.getSelection()?.toString() || prompt('Enter link text:') || url;
-                    execCommand('createLink', url);
-                    if (!document.queryCommandSupported('createLink')) {
+                    const text =
+                      window.getSelection()?.toString() ||
+                      prompt("Enter link text:") ||
+                      url;
+                    execCommand("createLink", url);
+                    if (!document.queryCommandSupported("createLink")) {
                       const link = `<a href="${url}" target="_blank" style="color: #3b82f6; text-decoration: underline;">${text}</a>`;
-                      execCommand('insertHTML', link);
+                      execCommand("insertHTML", link);
                     }
                   }
                 }}
@@ -253,14 +254,14 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
                 onClick={() => {
                   const selection = window.getSelection();
                   const selectedText = selection?.toString();
-                  
+
                   if (selectedText) {
                     const codeSpan = `<code style="background-color: #f1f5f9; color: #e11d48; padding: 2px 4px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 0.9em;">${selectedText}</code>`;
-                    execCommand('insertHTML', codeSpan);
+                    execCommand("insertHTML", codeSpan);
                   } else {
                     const codeBlock = `<pre style="background-color: #1e293b; color: #e2e8f0; padding: 16px; border-radius: 8px; font-family: 'Courier New', monospace; font-size: 0.9em; overflow-x: auto; margin: 10px 0;"><code>// Enter your code here
 console.log('Hello World!');</code></pre>`;
-                    execCommand('insertHTML', codeBlock);
+                    execCommand("insertHTML", codeBlock);
                   }
                 }}
                 className={Style.toolbarButton}
@@ -268,12 +269,12 @@ console.log('Hello World!');</code></pre>`;
               >
                 Code
               </button>
-              
+
               <div className={Style.toolbarDivider}></div>
-              
+
               <button
                 type="button"
-                onClick={() => execCommand('justifyLeft')}
+                onClick={() => execCommand("justifyLeft")}
                 className={Style.toolbarButton}
                 title="Align Left"
               >
@@ -281,7 +282,7 @@ console.log('Hello World!');</code></pre>`;
               </button>
               <button
                 type="button"
-                onClick={() => execCommand('justifyCenter')}
+                onClick={() => execCommand("justifyCenter")}
                 className={Style.toolbarButton}
                 title="Align Center"
               >
@@ -289,17 +290,17 @@ console.log('Hello World!');</code></pre>`;
               </button>
               <button
                 type="button"
-                onClick={() => execCommand('justifyRight')}
+                onClick={() => execCommand("justifyRight")}
                 className={Style.toolbarButton}
                 title="Align Right"
               >
                 Right
               </button>
-              
+
               <div className={Style.toolbarDivider}></div>
-              
+
               <select
-                onChange={(e) => execCommand('fontSize', e.target.value)}
+                onChange={(e) => execCommand("fontSize", e.target.value)}
                 className={Style.toolbarSelect}
               >
                 <option value="3">Normal</option>
@@ -308,7 +309,7 @@ console.log('Hello World!');</code></pre>`;
                 <option value="5">X-Large</option>
                 <option value="6">XX-Large</option>
               </select>
-              
+
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
@@ -317,7 +318,7 @@ console.log('Hello World!');</code></pre>`;
               >
                 Insert Image
               </button>
-              
+
               <input
                 ref={fileInputRef}
                 type="file"
@@ -326,8 +327,7 @@ console.log('Hello World!');</code></pre>`;
                 className={Style.hiddenFileInput}
               />
             </div>
-            
-            {/* Editor */}
+
             <div
               ref={editorRef}
               contentEditable
@@ -338,16 +338,15 @@ console.log('Hello World!');</code></pre>`;
           </div>
         </div>
 
-
         <div className={Style.header}>
-        <button
-          onClick={handleSave}
-          disabled={saving}
-          className={Style.saveButton}
-        >
-          {saving ? 'Saving...' : 'Save Post'}
-        </button>
-      </div>
+          <button
+            onClick={handleSave}
+            disabled={saving}
+            className={Style.saveButton}
+          >
+            {saving ? "Saving..." : "Save Post"}
+          </button>
+        </div>
       </div>
     </div>
   );

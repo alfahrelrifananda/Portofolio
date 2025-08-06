@@ -1,8 +1,8 @@
 .container {
-    padding-top: var(--padding-vertical);
-    padding-bottom: var(--padding-vertical);
-    width: var(--container-width);
-    min-height: var(--container-height);
+  padding-top: var(--padding-vertical);
+  padding-bottom: var(--padding-vertical);
+  width: var(--container-width);
+  min-height: var(--container-height);
 }
 .container header {
   font-size: var(--header-size);
@@ -21,5 +21,5 @@
   line-height: var(--body-line-height);
 }
 .container ul {
-    padding-left: 3vw;
+  padding-left: 3vw;
 }
