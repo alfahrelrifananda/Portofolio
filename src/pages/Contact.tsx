@@ -1,8 +1,12 @@
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import Style from "../assets/Contact.module.css";
+import { useEffect } from "react";
 
 export default function Contact() {
+  useEffect(() => {
+    document.title = "Contact - Alfahrel Rifananda";
+  }, []);
   return (
     <>
       <Nav />

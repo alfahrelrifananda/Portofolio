@@ -1,8 +1,12 @@
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import Style from "../assets/Experience.module.css";
+import { useEffect } from "react";
 
 export default function Experience() {
+  useEffect(() => {
+    document.title = "Experience - Alfahrel Rifananda";
+  }, []);
   return (
     <>
       <Nav />

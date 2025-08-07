@@ -95,7 +95,7 @@ export const PostsProvider: React.FC<PostsProviderProps> = ({ children }) => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "100vh",
+          height: "100svh",
           fontSize: "18px",
         }}
       >

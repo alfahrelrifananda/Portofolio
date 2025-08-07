@@ -1,8 +1,12 @@
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import Style from "../assets/Expertise.module.css";
+import { useEffect } from "react";
 
 export default function Expertise() {
+  useEffect(() => {
+    document.title = "Expertise - Alfahrel Rifananda";
+  }, []);
   return (
     <>
       <Nav />

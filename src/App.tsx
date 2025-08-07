@@ -1,8 +1,12 @@
+import { useEffect } from "react";
 import "./App.css";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 
 function App() {
+  useEffect(() => {
+    document.title = "Alfahrel Rifananda";
+  }, []);
   return (
     <>
       <Nav />

@@ -75,11 +75,12 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
                 selectedCategory === category ? Style.active : ""
               }`}
             >
-              {category}{" "}
+              {category}
               {category !== "All" &&
                 `(${
                   posts.filter((p) => p.categories.includes(category)).length
                 })`}
+              {"   "}
             </button>
           ))}
         </div>
@@ -148,61 +149,77 @@ const PostView = ({ posts }: { posts: Post[] }) => {
         </div>
       </div>
     );
-  }
+  } else {
+    if (post.title !== undefined && slug !== undefined) {
+      if (document.URL.includes(slug)) {
+        useEffect(() => {
+          document.title = `${post.title} - Alfahrel Rifananda`;
+          return () => {
+            document.title = "Blog - Alfahrel Rifananda";
+          };
+        }, [slug]);
+      } else {
+      }
+    }
+    return (
+      <div className={Style.mainContainer}>
+        <article className={Style.articleContainer}>
+          <header className={Style.articleHeader}>
+            <h1 className={Style.articleTitle}>{post.title}</h1>
 
-  return (
-    <div className={Style.mainContainer}>
-      <article className={Style.articleContainer}>
-        <header className={Style.articleHeader}>
-          <h1 className={Style.articleTitle}>{post.title}</h1>
-
-          <div className={Style.articleMeta}>
-            <div className={Style.articleMetaItemDate}>
-              {new Date(post.date).toLocaleDateString()}
+            <div className={Style.articleMeta}>
+              <div className={Style.articleMetaItemDate}>
+                {new Date(post.date).toLocaleDateString()}
+              </div>
+              <div className={Style.articleMetaItem}>
+                <b>Reading time: </b>
+                {post.read_time} minutes
+              </div>
             </div>
-            <div className={Style.articleMetaItem}>
-              <b>Reading time: </b>
-              {post.read_time} minutes
-            </div>
-          </div>
 
-          {post.categories.length > 0 && (
-            <div className={Style.articleCategories}>
-              {post.categories.map((category) => (
-                <span key={category} className={Style.articleCategoryTag}>
-                  <b>Categories: </b>{" "}
-                  <span className={Style.articleCategoryTagChild}>
-                    {category}
+            {post.categories.length > 0 && (
+              <div className={Style.articleCategories}>
+                <b>Categories: </b>
+                <span className={Style.articleCategoryTag}>
+                  {post.categories.map((category) => (
+                    <span
+                      key={category}
+                      className={Style.articleCategoryTagChild}
+                    >
+                      {category}{category !== post.categories.at(-1) ? ", " : " "}
+                    </span>
+                  ))}
+                </span>
+              </div>
+            )}
+
+            {post.tags.length > 0 && (
+              <div className={Style.articleTags}>
+                <b>Tags: </b>
+                {post.tags.map((tag) => (
+                  <span key={tag} className={Style.articleTagItem}>
+                    #{tag}
                   </span>
-                </span>
-              ))}
-            </div>
-          )}
+                ))}
+              </div>
+            )}
+          </header>
 
-          {post.tags.length > 0 && (
-            <div className={Style.articleTags}>
-              <b>Tags: </b>
-              {post.tags.map((tag) => (
-                <span key={tag} className={Style.articleTagItem}>
-                  #{tag}
-                </span>
-              ))}
-            </div>
-          )}
-        </header>
-
-        <div
-          className={Style.articleContent}
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
-      </article>
-    </div>
-  );
+          <div
+            className={Style.articleContent}
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
+        </article>
+      </div>
+    );
+  }
 };
 
 export default function Blog() {
   const { posts } = usePosts();
-
+  useEffect(() => {
+    document.title = "Blog - Alfahrel Rifananda";
+  }, []);
   return (
     <>
       <Nav />

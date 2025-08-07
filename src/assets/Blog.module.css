@@ -27,7 +27,7 @@
 }
 
 .header {
-  margin-bottom: var(--padding-vertical);
+  margin-bottom: 1vh;
 }
 
 .mainTitle {

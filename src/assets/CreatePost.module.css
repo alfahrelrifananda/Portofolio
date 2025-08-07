@@ -1,6 +1,6 @@
 .mainContainer {
   padding-top: var(--padding-vertical);
-  width: var(--container-width);
+  width: var(--container-post-width);
   margin: 0 auto;
   font-size: var(--header-size);
   line-height: var(--header-line-height);

@@ -1,8 +1,12 @@
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import Style from "../assets/About.module.css";
+import { useEffect } from "react";
 
 export default function About() {
+  useEffect(() => {
+      document.title = "About - Alfahrel Rifananda"      
+    }, [])
   return (
     <>
       <Nav />
