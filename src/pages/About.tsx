@@ -5,8 +5,8 @@ import { useEffect } from "react";
 
 export default function About() {
   useEffect(() => {
-      document.title = "About - Alfahrel Rifananda"      
-    }, [])
+    document.title = "About Me - Alfahrel Rifananda";
+  }, []);
   return (
     <>
       <Nav />
@@ -26,9 +26,6 @@ export default function About() {
           <br />
           I'm now <b>20 years old,</b> looking for a job while trying to get
           into college.
-          <br />
-          <br />
-          So that's pretty much it.
         </p>
         <br />
         <h4>Life</h4>
@@ -116,6 +113,15 @@ export default function About() {
           I have some hobbies other than programming, like listening to{" "}
           <b>music, watching movies, and reading books</b> (mostly philosophical
           books).
+        </p>
+        <br />
+        <h4>Website</h4>
+        <br />
+        <p>
+          You can find the source code of this website in my{" "}
+          <a href="https://github.com/alfahrelrifananda/portofolio">
+            Github repository.
+          </a>
         </p>
       </div>
       <Footer />

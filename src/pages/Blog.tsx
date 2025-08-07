@@ -80,7 +80,6 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
                 `(${
                   posts.filter((p) => p.categories.includes(category)).length
                 })`}
-              {"   "}
             </button>
           ))}
         </div>
@@ -120,9 +119,16 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
               <div className={Style.postCardContent}>
                 <div className={Style.postCardMain}>
                   <h2 className={Style.postTitle}>{post.title}</h2>
-
                   <div className={Style.postMeta}>
-                    <span> {new Date(post.date).toLocaleDateString()}</span>
+                    <span>
+                      {" "}
+                      {new Date(post.date).toLocaleString("default", {
+                        month: "long",
+                      })}{" "}
+                      {new Date(post.date).getDate()}
+                      {", "}
+                      {new Date(post.date).getFullYear()}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -169,7 +175,12 @@ const PostView = ({ posts }: { posts: Post[] }) => {
 
             <div className={Style.articleMeta}>
               <div className={Style.articleMetaItemDate}>
-                {new Date(post.date).toLocaleDateString()}
+                {new Date(post.date).toLocaleString("default", {
+                  month: "long",
+                })}{" "}
+                {new Date(post.date).getDate()}
+                {", "}
+                {new Date(post.date).getFullYear()}
               </div>
               <div className={Style.articleMetaItem}>
                 <b>Reading time: </b>
@@ -186,7 +197,8 @@ const PostView = ({ posts }: { posts: Post[] }) => {
                       key={category}
                       className={Style.articleCategoryTagChild}
                     >
-                      {category}{category !== post.categories.at(-1) ? ", " : " "}
+                      {category}
+                      {category !== post.categories.at(-1) ? ", " : " "}
                     </span>
                   ))}
                 </span>

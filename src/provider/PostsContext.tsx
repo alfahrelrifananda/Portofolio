@@ -89,19 +89,7 @@ export const PostsProvider: React.FC<PostsProviderProps> = ({ children }) => {
   };
 
   if (isLoading) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100svh",
-          fontSize: "18px",
-        }}
-      >
-        Loading...
-      </div>
-    );
+    return <div className="loadingContainer">Loading...</div>;
   }
 
   return (
