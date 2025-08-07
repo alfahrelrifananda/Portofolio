@@ -21,7 +21,7 @@ function App() {
             <a href="https://github.com/alfahrelrifananda">Github</a>
           </li>
           <li>
-            <a href="https://t.me/Nexuuussss">Telegram</a>
+            <a href="https://m.me/61577039463575?hash=AbYGtFQYcT5RAnrA&source=qr_link_share">Messenger</a>
           </li>
           <li>
             <a href="https://www.instagram.com/fr3l_r?igsh=OTdvYXo3NzIzZ2xs">

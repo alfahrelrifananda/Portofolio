@@ -15,7 +15,10 @@ export default function Contact() {
         <br />
         <p>
           You can email me at <i>pahrel1234@gmail.com</i>, or drop me a message
-          on Telegram.
+          on{" "}
+          <a href="https://m.me/61577039463575?hash=AbYGtFQYcT5RAnrA&source=qr_link_share">
+            Messenger.
+          </a>
         </p>
         <br />
         <p>
