@@ -2,13 +2,8 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import Style from "../assets/Blog.module.css";
 import { useState, useEffect } from "react";
-import { createClient } from "@supabase/supabase-js";
 import { Routes, Route, useNavigate, useParams } from "react-router-dom";
-
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
-);
+import { usePosts } from "../provider/PostsContext";
 
 interface Post {
   id: string;
@@ -19,29 +14,6 @@ interface Post {
   categories: string[];
   tags: string[];
 }
-
-const supabaseClient = {
-  async getPosts(): Promise<Post[]> {
-    const { data, error } = await supabase
-      .from("posts")
-      .select("*")
-      .order("date", { ascending: false });
-
-    if (error) throw error;
-    return data || [];
-  },
-
-  async getPost(id: string): Promise<Post | null> {
-    const { data, error } = await supabase
-      .from("posts")
-      .select("*")
-      .eq("id", id)
-      .single();
-
-    if (error) return null;
-    return data;
-  },
-};
 
 const createSlug = (title: string): string => {
   return title
@@ -229,37 +201,8 @@ const PostView = ({ posts }: { posts: Post[] }) => {
 };
 
 export default function Blog() {
-  const [posts, setPosts] = useState<Post[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { posts } = usePosts();
 
-  useEffect(() => {
-    loadPosts();
-  }, []);
-
-  const loadPosts = async () => {
-    try {
-      const fetchedPosts = await supabaseClient.getPosts();
-      setPosts(fetchedPosts);
-    } catch (error) {
-      console.error("Error loading posts:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (loading) {
-    return (
-      <>
-        <Nav />
-        <div className={Style.mainContainer}>
-          <div className={Style.loadingContainer}>
-            <div>Fetching the database, please wait...</div>
-          </div>
-        </div>
-        <Footer />
-      </>
-    );
-  }
   return (
     <>
       <Nav />
