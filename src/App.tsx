@@ -14,14 +14,14 @@ import { createContext, useEffect, useState } from "react";
 import Footer from "./components/Footer.tsx";
 import Nav from "./components/Nav.tsx";
 
-export const ThemeContext = createContext("light");
+export const ThemeContext = createContext("dark");
 const adminDashboard = import.meta.env.VITE_DASHBOARD_URL;
 
 export default function App() {
   const [userTheme, setUserTheme] = useState(() => {
     const savedTheme = localStorage.getItem("userTheme");
     if (savedTheme === null) {
-      return "light";
+      return "dark";
     } else {
       return savedTheme;
     }

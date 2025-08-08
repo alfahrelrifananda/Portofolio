@@ -55,7 +55,7 @@ button {
     /* Width */
     --container-width: 100%;
     --container-post-width: 100%;
-    --container-height: calc(100svh - 230px);
+    --container-height: calc(100dvh - 230px);
 
     /* Padding  */
     --padding-horizontal: 5vw;
