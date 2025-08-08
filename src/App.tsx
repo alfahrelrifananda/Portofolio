@@ -12,7 +12,7 @@ import Home from "./pages/Home.tsx";
 import "./App.css";
 import { createContext, useEffect, useState } from "react";
 const adminDashboard = import.meta.env.VITE_DASHBOARD_URL;
-export const ThemeContext = createContext("light");
+export const ThemeContext = createContext("dark");
 export default function App() {
   const [userTheme, setUserTheme] = useState(() => {
     const savedTheme = localStorage.getItem("userTheme");
@@ -26,7 +26,7 @@ export default function App() {
   if (userTheme === "dark") {
     document.documentElement.style.setProperty("--color", "#2e2b26");
     document.documentElement.style.setProperty("--silver", "#bbbbbb");
-    document.documentElement.style.setProperty("--timberwolf", "#2626d5");
+    document.documentElement.style.setProperty("--timberwolf", "#d6d6d5");
     document.documentElement.style.setProperty("--background-color", "#efebe0");
   } else {
     document.documentElement.style.setProperty("--color", "#efebe0");
@@ -40,7 +40,7 @@ export default function App() {
       setUserTheme("dark");
       document.documentElement.style.setProperty("--color", "#2e2b26");
       document.documentElement.style.setProperty("--silver", "#bbbbbb");
-      document.documentElement.style.setProperty("--timberwolf", "#2626d5");
+      document.documentElement.style.setProperty("--timberwolf", "#d6d6d5");
       document.documentElement.style.setProperty(
         "--background-color",
         "#efebe0"
