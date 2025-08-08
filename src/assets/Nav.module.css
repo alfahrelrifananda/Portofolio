@@ -3,8 +3,10 @@
   font-size: var(--body-size);
   line-height: var(--body-line-height);
   justify-content: space-between;
-  padding-top: 20px;
   font-weight: var(--bold);
+  height: 50px;
+  padding-top: 20px;
+  overflow: hidden;
 }
 .Navbar .logo {
   text-decoration: none;

@@ -1,5 +1,3 @@
-import Footer from "../components/Footer";
-import Nav from "../components/Nav";
 import Style from "../assets/Experience.module.css";
 import { useEffect } from "react";
 
@@ -9,7 +7,6 @@ export default function Experience() {
   }, []);
   return (
     <>
-      <Nav />
       <div className={Style.container}>
         <header>Work experience</header>
         <br />
@@ -106,7 +103,6 @@ export default function Experience() {
           </p>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

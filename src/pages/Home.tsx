@@ -1,7 +1,5 @@
 import { useEffect } from "react";
 import Style from "../assets/Home.module.css";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
 
 export default function Home() {
   useEffect(() => {
@@ -9,7 +7,6 @@ export default function Home() {
   }, []);
   return (
     <>
-      <Nav />
       <div className={Style.jumbotron}>
         <h1>Alfahrel Rifananda</h1>
         <p>Software, Webdev, Appdev, Philosophy, History</p>
@@ -32,7 +29,6 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <Footer />
     </>
   );
 }

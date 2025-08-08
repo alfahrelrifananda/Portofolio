@@ -11,8 +11,12 @@ import NotFound from "./pages/NotFound.tsx";
 import Home from "./pages/Home.tsx";
 import "./App.css";
 import { createContext, useEffect, useState } from "react";
+import Footer from "./components/Footer.tsx";
+import Nav from "./components/Nav.tsx";
+
+export const ThemeContext = createContext("light");
 const adminDashboard = import.meta.env.VITE_DASHBOARD_URL;
-export const ThemeContext = createContext("dark");
+
 export default function App() {
   const [userTheme, setUserTheme] = useState(() => {
     const savedTheme = localStorage.getItem("userTheme");
@@ -67,6 +71,7 @@ export default function App() {
       <ThemeContext.Provider value={userTheme}>
         <PostsProvider>
           <BrowserRouter>
+            <Nav />
             <ScrollToTop />
             <Routes>
               <Route path="/" element={<Home />} />
@@ -78,14 +83,15 @@ export default function App() {
               <Route path={adminDashboard} element={<Dashboard />} />
               <Route path="*" element={<NotFound />}></Route>
             </Routes>
+            <Footer />
+            <div className="buttonThemeContainer">
+              <button onClick={toggleTheme} className="buttonThemeToggle">
+                {userTheme === "dark"
+                  ? "Switch to Dark Mode"
+                  : "Switch to Light Mode"}
+              </button>
+            </div>
           </BrowserRouter>
-          <div className="buttonThemeContainer">
-            <button onClick={toggleTheme} className="buttonThemeToggle">
-              {userTheme === "dark"
-                ? "Switch to Dark Mode"
-                : "Switch to Light Mode"}
-            </button>
-          </div>
         </PostsProvider>
       </ThemeContext.Provider>
     </>

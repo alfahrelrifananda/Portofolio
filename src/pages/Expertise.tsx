@@ -1,5 +1,3 @@
-import Footer from "../components/Footer";
-import Nav from "../components/Nav";
 import Style from "../assets/Expertise.module.css";
 import { useEffect } from "react";
 
@@ -9,7 +7,6 @@ export default function Expertise() {
   }, []);
   return (
     <>
-      <Nav />
       <div className={Style.container}>
         <header>Skills and Expertise</header>
         <br />
@@ -127,7 +124,6 @@ export default function Expertise() {
         </p>
         <br />
       </div>
-      <Footer />
     </>
   );
 }

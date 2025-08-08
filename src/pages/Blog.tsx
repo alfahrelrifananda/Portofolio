@@ -1,5 +1,3 @@
-import Footer from "../components/Footer";
-import Nav from "../components/Nav";
 import Style from "../assets/Blog.module.css";
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate, useParams } from "react-router-dom";
@@ -234,12 +232,10 @@ export default function Blog() {
   }, []);
   return (
     <>
-      <Nav />
       <Routes>
         <Route path="/" element={<PostsList posts={posts} />} />
         <Route path="/:slug" element={<PostView posts={posts} />} />
       </Routes>
-      <Footer />
     </>
   );
 }

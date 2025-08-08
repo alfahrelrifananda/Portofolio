@@ -1,5 +1,3 @@
-import Footer from "../components/Footer";
-import Nav from "../components/Nav";
 import Style from "../assets/Dashboard.module.css";
 import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
@@ -325,20 +323,17 @@ export default function Dashboard() {
   if (loading) {
     return (
       <>
-        <Nav />
         <div className={Style.mainContainer}>
           <div className={Style.loadingContainer}>
             <div>Wait...</div>
           </div>
         </div>
-        <Footer />
       </>
     );
   }
 
   return (
     <>
-      <Nav />
       <Routes>
         <Route path="/" element={<PostsList posts={posts} />} />
         <Route
@@ -347,7 +342,6 @@ export default function Dashboard() {
         />
         <Route path="/:slug" element={<PostView posts={posts} />} />
       </Routes>
-      <Footer />
     </>
   );
 }

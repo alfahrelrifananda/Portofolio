@@ -1,5 +1,3 @@
-import Footer from "../components/Footer";
-import Nav from "../components/Nav";
 import Style from "../assets/About.module.css";
 import { useEffect } from "react";
 
@@ -9,7 +7,6 @@ export default function About() {
   }, []);
   return (
     <>
-      <Nav />
       <div className={Style.container}>
         <header>About Me</header>
         <br />
@@ -124,7 +121,6 @@ export default function About() {
           </a>
         </p>
       </div>
-      <Footer />
     </>
   );
 }

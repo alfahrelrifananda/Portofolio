@@ -11,7 +11,7 @@
   /* Size */
   --container-width: 65vw;
   --container-post-width: 50vw;
-  --container-height: 75vh;
+  --container-height: calc(100vh - 230px);
 
   /* Padding  */
   --padding-horizontal: 7vw;
@@ -50,13 +50,12 @@ button {
   font-family: "Roboto Mono", monospace;
 }
 
-
 @media screen and (max-width: 1000px) {
   :root {
     /* Width */
     --container-width: 100%;
     --container-post-width: 100%;
-    --container-height: 75svh;
+    --container-height: calc(100svh - 230px);
 
     /* Padding  */
     --padding-horizontal: 5vw;

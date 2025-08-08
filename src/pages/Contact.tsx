@@ -1,5 +1,3 @@
-import Footer from "../components/Footer";
-import Nav from "../components/Nav";
 import Style from "../assets/Contact.module.css";
 import { useEffect } from "react";
 
@@ -9,7 +7,6 @@ export default function Contact() {
   }, []);
   return (
     <>
-      <Nav />
       <div className={Style.container}>
         <header>Contact Me</header>
         <br />
@@ -40,7 +37,6 @@ export default function Contact() {
           free to reach out via email or Instagram to schedule a call.
         </p>
       </div>
-      <Footer />
     </>
   );
 }
