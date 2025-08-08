@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import Style from "../assets/Nav.module.css";
 
 export default function Nav() {
+
   function menuToggle() {
     const navbarUl = document.getElementById("navbar-ul");
     navbarUl?.classList.toggle("show");

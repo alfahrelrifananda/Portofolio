@@ -4,44 +4,28 @@
 }
 
 body {
+  background-color: var(--background-color);
+  color: var(--color);
   padding-left: var(--padding-horizontal);
   padding-right: var(--padding-horizontal);
 }
 
-.jumbotron {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-weight: var(--bold);
-  min-height: var(--container-height);
+.buttonThemeToggle {
+  border: none;
+  background-color: transparent;
+  margin-bottom: var(--padding-vertical);
+  width: 100%;
 }
-.jumbotron h1 {
-  font-size: var(--header-size);
-  line-height: var(--header-line-height);
-}
-.jumbotron p {
-  padding-top: 20px;
-  padding-bottom: 32px;
-  opacity: 0.9;
-  font-size: var(--subheader-size);
-  line-height: var(--subheader-line-height);
-}
-.jumbotron ul {
-  list-style: none;
-  display: flex;
-  font-size: var(--body-size);
-  line-height: var(--body-line-height);
-  justify-content: center;
-  gap: 20px;
-}
-a {
+
+a,
+.buttonThemeToggle {
   color: var(--raw-umber);
   text-decoration: none;
   font-weight: var(--bold);
 }
 
-a:hover {
+a,
+.buttonThemeToggle:hover {
   color: var(--hover-text);
   text-decoration: underline;
 }
@@ -69,7 +53,7 @@ a:hover {
   animation-name: loadingDot;
   animation-duration: 3s;
   animation-direction: normal;
-  animation-delay: .5s;
+  animation-delay: 0.5s;
   animation-iteration-count: infinite;
 }
 .loadingContainer span:nth-child(3) {
@@ -96,7 +80,6 @@ a:hover {
   }
 }
 
-
 .notFoundContainer {
   width: 100%;
   height: var(--container-height);
@@ -113,14 +96,5 @@ a:hover {
   }
   #navbar-ul.show {
     display: flex;
-  }
-  .jumbotron {
-    height: 65vh;
-  }
-  .jumbotron p {
-    line-height: 21px;
-  }
-  .jumbotron ul {
-    gap: 15px;
   }
 }
