@@ -5,7 +5,7 @@ import Nav from "./components/Nav";
 
 function App() {
   useEffect(() => {
-    document.title = "Alfahrel Rifananda";
+    document.title = "Home - Alfahrel Rifananda";
   }, []);
   return (
     <>

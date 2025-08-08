@@ -177,7 +177,15 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
                   <h2 className={Style.postTitle}>{post.title}</h2>
 
                   <div className={Style.postMeta}>
-                    <span> {new Date(post.date).toLocaleDateString()}</span>
+                    <span>
+                      {" "}
+                      {new Date(post.date).toLocaleString("default", {
+                        month: "long",
+                      })}{" "}
+                      {new Date(post.date).getDate()}
+                      {", "}
+                      {new Date(post.date).getFullYear()}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -214,7 +222,12 @@ const PostView = ({ posts }: { posts: Post[] }) => {
 
           <div className={Style.articleMeta}>
             <div className={Style.articleMetaItemDate}>
-              {new Date(post.date).toLocaleDateString()}
+              {new Date(post.date).toLocaleString("default", {
+                month: "long",
+              })}{" "}
+              {new Date(post.date).getDate()}
+              {", "}
+              {new Date(post.date).getFullYear()}
             </div>
             <div className={Style.articleMetaItem}>
               <b>Reading time: </b>
@@ -289,6 +302,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    document.title = "Dashboard - Alfahrel Rifananda";
     loadPosts();
   }, []);
 
@@ -314,7 +328,7 @@ export default function Dashboard() {
         <Nav />
         <div className={Style.mainContainer}>
           <div className={Style.loadingContainer}>
-            <div>Loading...</div>
+            <div>Wait...</div>
           </div>
         </div>
         <Footer />
