@@ -11,6 +11,7 @@ import Blog from "./pages/Blog.tsx";
 import Dashboard from "./admin/Dashboard.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import { PostsProvider } from "./provider/PostsContext.tsx";
+import NotFound from "./pages/NotFound.tsx";
 
 const adminDashboard = import.meta.env.VITE_DASHBOARD_URL;
 
@@ -27,6 +28,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/blog/*" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
           <Route path={adminDashboard} element={<Dashboard />} />
+          <Route path="*" element={<NotFound/>}></Route>
         </Routes>
       </BrowserRouter>
     </PostsProvider>
