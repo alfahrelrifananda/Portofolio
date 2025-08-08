@@ -5,11 +5,12 @@
   justify-content: space-between;
   font-weight: var(--bold);
   height: 50px;
-  padding-top: 20px;
   overflow: hidden;
+  align-items: center;
 }
 .Navbar .logo {
   text-decoration: none;
+  height: fit-content;
   color: var(--color);
 }
 .Navbar .logo:hover {
@@ -18,6 +19,7 @@
 }
 .Navbar .menu {
   display: none;
+  height: fit-content;
 }
 .Navbar ul {
   display: flex;
