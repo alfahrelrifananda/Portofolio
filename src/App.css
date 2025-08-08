@@ -10,13 +10,17 @@ body {
   padding-right: var(--padding-horizontal);
 }
 
+.buttonThemeContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: var(--padding-vertical);
+  padding-bottom: var(--padding-vertical);
+}
 .buttonThemeToggle {
   border: none;
-  background-color: transparent;
-  margin-bottom: var(--padding-vertical);
-  width: 100%;
+    background-color: transparent;
 }
-
 a,
 .buttonThemeToggle {
   color: var(--raw-umber);

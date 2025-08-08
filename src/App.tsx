@@ -79,11 +79,13 @@ export default function App() {
               <Route path="*" element={<NotFound />}></Route>
             </Routes>
           </BrowserRouter>
-          <button onClick={toggleTheme} className="buttonThemeToggle">
-            {userTheme === "dark"
-              ? "Switch to Dark Mode"
-              : "Switch to Light Mode"}
-          </button>
+          <div className="buttonThemeContainer">
+            <button onClick={toggleTheme} className="buttonThemeToggle">
+              {userTheme === "dark"
+                ? "Switch to Dark Mode"
+                : "Switch to Light Mode"}
+            </button>
+          </div>
         </PostsProvider>
       </ThemeContext.Provider>
     </>
