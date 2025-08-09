@@ -1,4 +1,4 @@
-# Portofolio - Alfahrel Rifananda
+# Portfolio - Alfahrel Rifananda
 
 ## Table of Contents
 
@@ -12,21 +12,21 @@
 
 Live Demo : www.alfahrelrifananda.my.id
 
-I create this site in summer 2025 after graduating High School and being unemployed.
+I create this site in summer 2025 after graduating from High School and being unemployed.
 
-This site is create using React with Typescript and SWC, i choose react because of my curiousity with how different typescript compared to javascript, turned out it is not that different.
+This site is create using React with Typescript and SWC, I choose React because of my curiosity with how different typescript compared to JavaScript, turned out it is not that different.
 
-In typescript i learn that this language is way better for debugging and finding error than JS it because you can list the type of some value to make it more explicit.
+In typescript, I learn that this language is way better for debugging and finding error than JS it because you can list the type of some value to make it more explicit.
 
-After using typescript i don't know if i would rollback to regular JS because it just the best, i would recomended typescript for anybody for making a React Project.
+After using typescript I don't know if I would roll back to regular JS because it just the best, I would recommend typescript for anybody for making a React Project.
 
 ### Built With
 
-React - Typescript and SWC with supabase as a backend
+React - Typescript and SWC with Supabase as a backend
 
 ## Features
 
-The feature is only contained of minimal Portofolio Site like :
+The feature is only contained of minimal Portfolio Site like :
 
 1. Home Page
 2. About Page
@@ -35,7 +35,7 @@ The feature is only contained of minimal Portofolio Site like :
 5. Blog Page
 6. Contact Page
 
-Thats it.
+That's it.
 
 ## Contact
 
@@ -61,4 +61,4 @@ Instagram
 
 ## Acknowledgements
 
-Im using StackOverflow and React Documentation to finish this site.
+I'm using Stack Overflow and React Documentation to finish this site.
