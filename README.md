@@ -14,7 +14,7 @@ Live Demo : www.alfahrelrifananda.my.id
 
 I create this site in summer 2025 after graduating High School and being unemployed.
 
-This site is create using React with Typescript and SWC, i chose react because of my curiousity with how different typescript compared to javascript, turned out it is not that different.
+This site is create using React with Typescript and SWC, i choose react because of my curiousity with how different typescript compared to javascript, turned out it is not that different.
 
 In typescript i learn that this language is way better for debugging and finding error than JS it because you can list the type of some value to make it more explicit.
 
@@ -61,4 +61,4 @@ Instagram
 
 ## Acknowledgements
 
-Im using StackOverflow and React Documentation to finish this site
+Im using StackOverflow and React Documentation to finish this site.
