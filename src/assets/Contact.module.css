@@ -2,7 +2,7 @@
   padding-top: var(--padding-vertical);
   padding-bottom: var(--padding-vertical);
   width: var(--container-width);
-  min-height: var(--container-height);
+  min-height: calc(var(--container-height) - var(--padding-vertical) * 2);
 }
 .container header {
   font-size: var(--header-size);
