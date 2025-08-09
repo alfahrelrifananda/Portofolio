@@ -10,25 +10,55 @@
 
 ## Overview
 
-<!-- TODO: Add a screenshot of the live project.
-    1. Link to a 'live demo.'
-    2. Describe your overall experience in a couple of sentences.
-    3. List a few specific technical things that you learned or improved on.
-    4. Share any other tips or guidance for others attempting this or something similar.
- -->
+Live Demo : www.alfahrelrifananda.my.id
+
+I create this site in summer 2025 after graduating High School and being unemployed.
+
+This site is create using React with Typescript and SWC, i chose react because of my curiousity with how different typescript compared to javascript, turned out it is not that different.
+
+In typescript i learn that this language is way better for debugging and finding error than JS it because you can list the type of some value to make it more explicit.
+
+After using typescript i don't know if i would rollback to regular JS because it just the best, i would recomended typescript for anybody for making a React Project.
 
 ### Built With
 
-<!-- TODO: List any MAJOR libraries/frameworks (e.g. React, Tailwind) with links to their homepages. -->
+React - Typescript and SWC with supabase as a backend
 
 ## Features
 
-<!-- TODO: List what specific 'user problems' that this application solves. -->
+The feature is only contained of minimal Portofolio Site like :
+
+1. Home Page
+2. About Page
+3. Expertise Page
+4. Experience Page
+5. Blog Page
+6. Contact Page
+
+Thats it.
 
 ## Contact
 
-<!-- TODO: Include icons and links to your RELEVANT, PROFESSIONAL 'DEV-ORIENTED' social media. LinkedIn and dev.to are minimum. -->
+You can find me on :
+<ul>
+<li>
+<a href="mailto:pahrel1234@gmail.com">Email</a>
+</li>
+<li>
+<a href="https://github.com/alfahrelrifananda">Github</a>
+</li>
+<li>
+<a href="https://m.me/61577039463575?hash=AbYGtFQYcT5RAnrA&source=qr_link_share">
+Messenger
+</a>
+</li>
+<li>
+<a href="https://www.instagram.com/relisnotavailable?igsh=OTdvYXo3NzIzZ2xs">
+Instagram
+</a>
+</li>
+</ul>
 
 ## Acknowledgements
 
-<!-- TODO: List any blog posts, tutorials or plugins that you may have used to complete the project. Only list those that had a significant impact. Obviously, we all 'Google' stuff while working on our things, but maybe something in particular stood out as a 'major contributor' to your skill set for this project. -->
+Im using StackOverflow and React Documentation to finish this site
