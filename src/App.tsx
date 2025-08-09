@@ -27,38 +27,34 @@ export default function App() {
     }
   });
 
-  if (userTheme === "dark") {
+  function darkMode() {
     document.documentElement.style.setProperty("--color", "#2e2b26");
     document.documentElement.style.setProperty("--silver", "#bbbbbb");
     document.documentElement.style.setProperty("--timberwolf", "#d6d6d5");
     document.documentElement.style.setProperty("--background-color", "#efebe0");
-  } else {
+  }
+
+  function lightMode() {
     document.documentElement.style.setProperty("--color", "#efebe0");
     document.documentElement.style.setProperty("--silver", "#efebe0");
     document.documentElement.style.setProperty("--timberwolf", "#000000");
     document.documentElement.style.setProperty("--background-color", "#2e2b26");
   }
 
+  if (userTheme === "dark") {
+    darkMode();
+  } else {
+    lightMode();
+  }
+
   function toggleTheme() {
     if (userTheme === "light") {
       setUserTheme("dark");
-      document.documentElement.style.setProperty("--color", "#2e2b26");
-      document.documentElement.style.setProperty("--silver", "#bbbbbb");
-      document.documentElement.style.setProperty("--timberwolf", "#d6d6d5");
-      document.documentElement.style.setProperty(
-        "--background-color",
-        "#efebe0"
-      );
+      darkMode();
     }
     if (userTheme === "dark") {
       setUserTheme("light");
-      document.documentElement.style.setProperty("--color", "#efebe0");
-      document.documentElement.style.setProperty("--silver", "#efebe0");
-      document.documentElement.style.setProperty("--timberwolf", "#000000");
-      document.documentElement.style.setProperty(
-        "--background-color",
-        "#2e2b26"
-      );
+      lightMode();
     }
   }
 
