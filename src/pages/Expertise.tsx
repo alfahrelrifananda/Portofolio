@@ -50,9 +50,10 @@ export default function Expertise() {
           <br />
           <ul>
             <li>
-              <b>MDC Android (Java and XML)</b>
+              <b>Native Android (Java and XML)</b>
             </li>
             <li>Jetpack Compose</li>
+            <li>React Native</li>
             <li>Flutter</li>
           </ul>
           <br />
@@ -101,8 +102,13 @@ export default function Expertise() {
           <br />
           <ul>
             <li>
-              <i>"Always choose the best tool for the job"</i> Selecting
-              technologies based on project requirements and scalability.
+              <i>
+                <a href="https://kevlinhenney.medium.com/the-right-tool-for-the-job-d6d3a80cecf8">
+                  "Always choose the best tool for the job"
+                </a>
+              </i>{" "}
+              Selecting technologies based on project requirements and
+              scalability.
             </li>
             <li>
               Prioritizing readability and maintainability for future

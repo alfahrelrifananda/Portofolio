@@ -68,7 +68,7 @@ export default function Experience() {
               having a trouble at finding a job that is relevant so i try to
               force myself to try or at least doing something that is (kinda)
               productive in my free time. So i made bunch of app and also this
-              website while waiting for me to go to college
+              website while waiting for me to go to college.
             </p>
             <br />
             <b>Digimizu Digital Management</b>
@@ -84,7 +84,7 @@ export default function Experience() {
               school. while doing so i get a lot of knowledge of how wordpress,
               cms, and wordpress theme(Divi in particular) work. so that made me
               realize how i can build a website with no code entirely just using
-              this kind of tool
+              this kind of tool.
             </p>
           </p>
           <br />
@@ -98,7 +98,7 @@ export default function Experience() {
             </p>
             <p>
               When im still in High School my aunt ask me to build her a website
-              that is call POS PSIKOLOGI so i Volunteeraly doing just that
+              that is call POS PSIKOLOGI so i Volunteeraly doing just that.
             </p>
           </p>
         </div>
