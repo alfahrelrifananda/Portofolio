@@ -11,7 +11,7 @@
   /* Size */
   --container-width: 65vw;
   --container-post-width: 50vw;
-  --container-height: calc(100vh - 210px);
+  --container-height: calc(100vh - 240px);
 
   /* Padding  */
   --padding-horizontal: 7vw;
@@ -55,7 +55,7 @@ button {
     /* Width */
     --container-width: 100%;
     --container-post-width: 100%;
-    --container-height: calc(100dvh - 210px);
+    --container-height: calc(100dvh - 240px);
 
     /* Padding  */
     --padding-horizontal: 5vw;
