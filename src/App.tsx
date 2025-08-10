@@ -38,7 +38,7 @@ export default function App() {
     document.documentElement.style.setProperty("--color", "#efebe0");
     document.documentElement.style.setProperty("--silver", "#efebe0");
     document.documentElement.style.setProperty("--timberwolf", "#000000");
-    document.documentElement.style.setProperty("--background-color", "#2e2b26");
+    document.documentElement.style.setProperty("--background-color", "#0d0c0c");
   }
 
   if (userTheme === "dark") {
