@@ -45,14 +45,15 @@ export default function About() {
         <br />
         <p>
           I began elementary school around 2013 at
-          <b> SDN Bayan,</b>
-          a state school. However, I encountered difficulties in 3rd grade when
-          I frequently missed classes for reasons I still don't fully understand
-          (probably due to laziness). This led me to repeat 3rd grade after
-          taking a one-year break. During this time, I had to transfer to SDN
-          Banyuagung 3 because we moved to a different neighborhood called
-          Banyuagung. At this new school, I performed much better—I made great
-          friends, maintained good attendance, and achieved decent final grades.
+          <b> SDN Bayan,</b>a state school. However, I encountered difficulties
+          in 3rd grade when I frequently missed classes for reasons I still
+          don't fully understand (probably due to laziness). This led me to
+          repeat 3rd grade after taking a one-year break. During this time, I
+          had to transfer to
+          <b> SDN Banyuagung 3</b> because we moved to a different neighborhood
+          called Banyuagung. At this new school, I performed much better—I made
+          great friends, maintained good attendance, and achieved decent final
+          grades.
           <br />
           <br />
           After completing elementary school, I enrolled at
