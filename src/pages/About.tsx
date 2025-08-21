@@ -15,7 +15,7 @@ export default function About() {
         <p>
           Hi, my name is
           <b>Nabillio Alfahrel Rifananda.</b> You can call me
-          <i>Fahrel.</i>
+          <i> Fahrel.</i>
           I'm a fresh graduate from Vocational High School 5 Surakarta with a
           major in Software Engineering. I'm currently 20 years old and actively
           looking for a job while preparing to pursue higher education.
