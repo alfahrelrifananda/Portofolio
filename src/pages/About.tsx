@@ -33,7 +33,7 @@ export default function About() {
           apartment) with my older brother. Despite this, she visits me
           regularly and provides financial support every week. I rarely see my
           father—the last time was about a year ago. I'm uncertain about his
-          current whereabouts or situation. 
+          current whereabouts or situation.
           <br />
           <br />
           Right now, I'm focused on becoming financially independent and
