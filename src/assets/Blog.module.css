@@ -170,6 +170,31 @@
   padding-left: 36px;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+.paginationButton {
+ font-size: var(--body-size);
+  line-height: var(--body-line-height);
+  color: var(--raw-umber);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+.paginationButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.paginationInfo {
+  margin: 0 1rem;
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+}
+
 @media screen and (max-width: 1000px) {
   .postCardMain {
     flex-direction: column-reverse;

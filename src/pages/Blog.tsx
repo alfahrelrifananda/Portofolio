@@ -30,9 +30,13 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
   const navigate = useNavigate();
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
+  const POSTS_PER_PAGE = 3;
 
   useEffect(() => {
     filterPosts();
+    setCurrentPage(1);
   }, [posts, selectedCategory]);
 
   const filterPosts = () => {
@@ -54,6 +58,12 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
     const slug = createSlug(post.title);
     navigate(`${slug}`, { preventScrollReset: false });
   };
+
+  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+  const paginatedPosts = filteredPosts.slice(
+    (currentPage - 1) * POSTS_PER_PAGE,
+    currentPage * POSTS_PER_PAGE
+  );
 
   return (
     <div className={Style.mainContainer}>
@@ -107,32 +117,56 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
           )}
         </div>
       ) : (
-        <div className={Style.postsGrid}>
-          {filteredPosts.map((post) => (
-            <div
-              key={post.id}
-              onClick={() => handleViewPost(post)}
-              className={Style.postCard}
-            >
-              <div className={Style.postCardContent}>
-                <div className={Style.postCardMain}>
-                  <h2 className={Style.postTitle}>{post.title}</h2>
-                  <div className={Style.postMeta}>
-                    <span>
-                      {" "}
-                      {new Date(post.date).toLocaleString("default", {
-                        month: "long",
-                      })}{" "}
-                      {new Date(post.date).getDate()}
-                      {", "}
-                      {new Date(post.date).getFullYear()}
-                    </span>
+        <>
+          <div className={Style.postsGrid}>
+            {paginatedPosts.map((post) => (
+              <div
+                key={post.id}
+                onClick={() => handleViewPost(post)}
+                className={Style.postCard}
+              >
+                <div className={Style.postCardContent}>
+                  <div className={Style.postCardMain}>
+                    <h2 className={Style.postTitle}>{post.title}</h2>
+                    <div className={Style.postMeta}>
+                      <span>
+                        {" "}
+                        {new Date(post.date).toLocaleString("default", {
+                          month: "long",
+                        })}{" "}
+                        {new Date(post.date).getDate()}
+                        {", "}
+                        {new Date(post.date).getFullYear()}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+          {/* Pagination Controls */}
+          {totalPages > 1 && (
+            <div className={Style.pagination}>
+              <button
+                onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+                disabled={currentPage === 1}
+                className={Style.paginationButton}
+              >
+                Prev
+              </button>
+              <span className={Style.paginationInfo}>
+                Page {currentPage} of {totalPages}
+              </span>
+              <button
+                onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+                disabled={currentPage === totalPages}
+                className={Style.paginationButton}
+              >
+                Next
+              </button>
             </div>
-          ))}
-        </div>
+          )}
+        </>
       )}
     </div>
   );
