@@ -62,6 +62,25 @@ const supabaseClient = {
     if (error) return null;
     return data;
   },
+
+  async updatePost(id: string, post: Omit<Post, "id">): Promise<Post> {
+    const { data, error } = await supabase
+      .from("posts")
+      .update({
+        title: post.title,
+        content: post.content,
+        read_time: post.read_time,
+        date: post.date,
+        categories: post.categories,
+        tags: post.tags,
+      })
+      .eq("id", id)
+      .select()
+      .single();
+
+    if (error) throw error;
+    return data;
+  },
 };
 
 const createSlug = (title: string): string => {
@@ -173,10 +192,8 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
               <div className={Style.postCardContent}>
                 <div className={Style.postCardMain}>
                   <h2 className={Style.postTitle}>{post.title}</h2>
-
                   <div className={Style.postMeta}>
                     <span>
-                      {" "}
                       {new Date(post.date).toLocaleString("default", {
                         month: "long",
                       })}{" "}
@@ -186,6 +203,15 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
                     </span>
                   </div>
                 </div>
+                <button
+                  className={Style.editButton}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate(`${adminDashboardInside}/edit/${post.id}`);
+                  }}
+                >
+                  Edit
+                </button>
               </div>
             </div>
           ))}
@@ -295,6 +321,57 @@ const CreatePostWrapper = ({
   return <CreatePost onSave={handleSave} onBack={handleBack} saving={saving} />;
 };
 
+const EditPostWrapper = ({
+  posts,
+  onUpdate,
+}: {
+  posts: Post[];
+  onUpdate: (id: string, post: Omit<Post, "id">) => Promise<void>;
+}) => {
+  const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
+  const [saving, setSaving] = useState(false);
+
+  const post = posts.find((p) => p.id === id);
+
+  if (!post) {
+    return (
+      <div className={Style.mainContainer}>
+        <div className={Style.emptyState}>
+          <p className={Style.emptyTitle}>Post not found</p>
+        </div>
+      </div>
+    );
+  }
+
+  const handleSave = async (postData: Omit<Post, "id">) => {
+    setSaving(true);
+    try {
+      await onUpdate(post.id, postData);
+      navigate(`${adminDashboardInside}`);
+    } catch (error) {
+      console.error("Error updating post:", error);
+      alert("Failed to update post");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleBack = () => {
+    navigate(`${adminDashboardInside}`);
+  };
+
+  return (
+    <CreatePost
+      onSave={handleSave}
+      onBack={handleBack}
+      saving={saving}
+      initialData={post}
+      isEdit={true}
+    />
+  );
+};
+
 export default function Dashboard() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
@@ -320,6 +397,13 @@ export default function Dashboard() {
     setPosts((prev) => [post, ...prev]);
   };
 
+  const handleUpdatePost = async (id: string, postData: Omit<Post, "id">) => {
+    const updatedPost = await supabaseClient.updatePost(id, postData);
+    setPosts((prev) =>
+      prev.map((p) => (p.id === id ? updatedPost : p))
+    );
+  };
+
   if (loading) {
     return (
       <>
@@ -341,6 +425,15 @@ export default function Dashboard() {
           element={<CreatePostWrapper onSave={handleSavePost} />}
         />
         <Route path="/:slug" element={<PostView posts={posts} />} />
+        <Route
+          path="/edit/:id"
+          element={
+            <EditPostWrapper
+              posts={posts}
+              onUpdate={handleUpdatePost}
+            />
+          }
+        />
       </Routes>
     </>
   );

@@ -1,5 +1,5 @@
 import Style from "../assets/CreatePost.module.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 interface Post {
   id: string;
@@ -15,13 +15,21 @@ interface CreatePostProps {
   onSave: (post: Omit<Post, "id">) => Promise<void>;
   onBack: () => void;
   saving: boolean;
+  initialData?: Omit<Post, "id">;
+  isEdit?: boolean;
 }
 
-const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [categories, setCategories] = useState<string[]>([]);
-  const [tags, setTags] = useState<string[]>([]);
+const CreatePost: React.FC<CreatePostProps> = ({
+  onSave,
+  onBack,
+  saving,
+  initialData,
+  isEdit = false,
+}) => {
+  const [title, setTitle] = useState(initialData?.title || "");
+  const [content, setContent] = useState(initialData?.content || "");
+  const [categories, setCategories] = useState<string[]>(initialData?.categories || []);
+  const [tags, setTags] = useState<string[]>(initialData?.tags || []);
   const [newCategory, setNewCategory] = useState("");
   const [newTag, setNewTag] = useState("");
 
@@ -94,11 +102,17 @@ const CreatePost: React.FC<CreatePostProps> = ({ onSave, saving }) => {
       title: title.trim(),
       content,
       read_time: calculateReadTime(content),
-      date: new Date().toISOString(),
+      date: initialData?.date || new Date().toISOString(),
       categories,
       tags,
     });
   };
+
+  useEffect(() => {
+    if (editorRef.current && initialData?.content) {
+      editorRef.current.innerHTML = initialData.content;
+    }
+  }, [editorRef, initialData]);
 
   return (
     <div className={Style.mainContainer}>
@@ -344,7 +358,15 @@ console.log('Hello World!');</code></pre>`;
             disabled={saving}
             className={Style.saveButton}
           >
-            {saving ? "Saving..." : "Save Post"}
+            {saving ? (isEdit ? "Updating..." : "Saving...") : isEdit ? "Update Post" : "Save Post"}
+          </button>
+          <button
+            onClick={onBack}
+            className={Style.cancelButton}
+            disabled={saving}
+            style={{ marginLeft: "8px" }}
+          >
+            Cancel
           </button>
         </div>
       </div>
