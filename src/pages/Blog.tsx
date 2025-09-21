@@ -145,7 +145,6 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
               </div>
             ))}
           </div>
-          {/* Pagination Controls */}
           {totalPages > 1 && (
             <div className={Style.pagination}>
               <button
@@ -175,7 +174,7 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
 
 const PostView = ({ posts }: { posts: Post[] }) => {
   const { slug } = useParams<{ slug: string; page?: string }>();
-  const navigate = useNavigate(); // Add this line
+  const navigate = useNavigate();
   const post = slug ? findPostBySlug(posts, slug) : null;
 
   if (!post) {
@@ -205,7 +204,6 @@ const PostView = ({ posts }: { posts: Post[] }) => {
       <div className={Style.mainContainer}>
         <article className={Style.articleContainer}>
           <header className={Style.articleHeader}>
-            {/* Back Button */}
             <button
               className={Style.backButton}
               onClick={() => navigate(-1)}
