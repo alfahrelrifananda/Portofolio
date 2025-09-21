@@ -1,6 +1,6 @@
 import Style from "../assets/Blog.module.css";
 import { useState, useEffect } from "react";
-import { Routes, Route, useNavigate, useParams, useLocation } from "react-router-dom";
+import { Routes, Route, useNavigate, useParams } from "react-router-dom";
 import { usePosts } from "../provider/PostsContext";
 
 interface Post {
@@ -174,7 +174,8 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
 };
 
 const PostView = ({ posts }: { posts: Post[] }) => {
-  const { slug, page } = useParams<{ slug: string; page?: string }>();
+  const { slug } = useParams<{ slug: string; page?: string }>();
+  const navigate = useNavigate(); // Add this line
   const post = slug ? findPostBySlug(posts, slug) : null;
 
   if (!post) {
@@ -204,6 +205,14 @@ const PostView = ({ posts }: { posts: Post[] }) => {
       <div className={Style.mainContainer}>
         <article className={Style.articleContainer}>
           <header className={Style.articleHeader}>
+            {/* Back Button */}
+            <button
+              className={Style.backButton}
+              onClick={() => navigate(-1)}
+              style={{ marginBottom: "1rem" }}
+            >
+              ← Back
+            </button>
             <h1 className={Style.articleTitle}>{post.title}</h1>
 
             <div className={Style.articleMeta}>
