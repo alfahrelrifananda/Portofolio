@@ -1,6 +1,6 @@
 import Style from "../assets/Blog.module.css";
 import { useState, useEffect } from "react";
-import { Routes, Route, useNavigate, useParams } from "react-router-dom";
+import { Routes, Route, useNavigate, useParams, useLocation } from "react-router-dom";
 import { usePosts } from "../provider/PostsContext";
 
 interface Post {
@@ -28,16 +28,17 @@ const findPostBySlug = (posts: Post[], slug: string): Post | null => {
 
 const PostsList = ({ posts }: { posts: Post[] }) => {
   const navigate = useNavigate();
+  const { page } = useParams<{ page?: string }>();
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [currentPage, setCurrentPage] = useState<number>(Number(page) || 1);
 
   const POSTS_PER_PAGE = 3;
 
   useEffect(() => {
     filterPosts();
-    setCurrentPage(1);
-  }, [posts, selectedCategory]);
+    setCurrentPage(Number(page) || 1);
+  }, [posts, selectedCategory, page]);
 
   const filterPosts = () => {
     if (selectedCategory === "All") {
@@ -56,7 +57,7 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
 
   const handleViewPost = (post: Post) => {
     const slug = createSlug(post.title);
-    navigate(`${slug}`, { preventScrollReset: false });
+    navigate(`/blog/page/${currentPage}/${slug}`, { preventScrollReset: false });
   };
 
   const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
@@ -148,7 +149,7 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
           {totalPages > 1 && (
             <div className={Style.pagination}>
               <button
-                onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+                onClick={() => navigate(`/blog/page/${currentPage - 1}`)}
                 disabled={currentPage === 1}
                 className={Style.paginationButton}
               >
@@ -158,7 +159,7 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
                 Page {currentPage} of {totalPages}
               </span>
               <button
-                onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+                onClick={() => navigate(`/blog/page/${currentPage + 1}`)}
                 disabled={currentPage === totalPages}
                 className={Style.paginationButton}
               >
@@ -173,7 +174,7 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
 };
 
 const PostView = ({ posts }: { posts: Post[] }) => {
-  const { slug } = useParams<{ slug: string }>();
+  const { slug, page } = useParams<{ slug: string; page?: string }>();
   const post = slug ? findPostBySlug(posts, slug) : null;
 
   if (!post) {
@@ -268,6 +269,8 @@ export default function Blog() {
     <>
       <Routes>
         <Route path="/" element={<PostsList posts={posts} />} />
+        <Route path="/page/:page" element={<PostsList posts={posts} />} />
+        <Route path="/page/:page/:slug" element={<PostView posts={posts} />} />
         <Route path="/:slug" element={<PostView posts={posts} />} />
       </Routes>
     </>
