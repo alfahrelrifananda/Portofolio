@@ -23,8 +23,8 @@ export default function Home() {
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/relisnotavailable?igsh=OTdvYXo3NzIzZ2xs">
-              Instagram
+            <a href="https://discord.gg/bQVC7JVa">
+              Discord
             </a>
           </li>
         </ul>

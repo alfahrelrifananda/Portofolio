@@ -19,9 +19,9 @@ export default function Contact() {
         </p>
         <br />
         <p>
-          Want to connect on Instagram?{" "}
-          <a href="https://www.instagram.com/fr3l_r?igsh=OTdvYXo3NzIzZ2xs">
-            Feel free to DM me.
+          Want to connect?{" "}
+          <a href="https://discord.gg/bQVC7JVa">
+            Feel free to message me on Discord.
           </a>
         </p>
         <br />

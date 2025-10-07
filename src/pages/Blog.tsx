@@ -33,7 +33,7 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [currentPage, setCurrentPage] = useState<number>(Number(page) || 1);
 
-  const POSTS_PER_PAGE = 3;
+  const POSTS_PER_PAGE = 10;
 
   useEffect(() => {
     filterPosts();
