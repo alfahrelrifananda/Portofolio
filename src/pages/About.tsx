@@ -18,7 +18,7 @@ export default function About() {
           <i> Fahrel.</i>
           I'm a fresh graduate from <b> Vocational High School 5 Surakarta</b> with a
           major in <b>  Software Engineering. </b> I'm currently 20 years old and actively
-          looking for a job while preparing to pursue higher education.
+          looking for a job.
         </p>
         <br />
         <h4>Life</h4>
@@ -77,6 +77,9 @@ export default function About() {
           somewhat misguided). At this school, I selected Computer Science as my
           major because I had developed an interest in the field. I successfully
           completed my studies and graduated.
+          <br />
+          <br />
+          Then, I attended college at <b>Universitas Pignatelli Triputra</b> but dropped out after 2 month due to financial constraints.
         </p>
         <br />
         <h4>Work</h4>
