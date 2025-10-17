@@ -14,9 +14,18 @@
   padding-top: 20px;
   padding-bottom: 32px;
   opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  gap: 1.3rem;
   font-size: var(--subheader-size);
   line-height: var(--subheader-line-height);
 }
+
+.jumbotron p .aAlternative {
+  color: var(--color);
+  text-decoration: none;
+}
+
 .jumbotron ul {
   list-style: none;
   display: flex;
