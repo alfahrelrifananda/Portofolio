@@ -16,7 +16,10 @@
   opacity: 0.9;
   display: flex;
   justify-content: center;
-  gap: 1.3rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
   font-size: var(--subheader-size);
   line-height: var(--subheader-line-height);
 }
