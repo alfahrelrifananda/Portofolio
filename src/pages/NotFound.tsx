@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import "../App.css";
+import { useEffect } from "react";
 
 export default function NotFound() {
+  useEffect(() => {
+    document.title = "404 - Alfahrel Rifananda";
+  });
+
   return (
     <>
       <div className="notFoundContainer">

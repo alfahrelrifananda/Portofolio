@@ -26,11 +26,6 @@ export default function Home() {
             <a href="https://github.com/alfahrelrifananda">Github</a>
           </li>
           <li>
-            <a href="https://m.me/61577039463575?hash=AbYGtFQYcT5RAnrA&source=qr_link_share">
-              Messenger
-            </a>
-          </li>
-          <li>
             <a href="https://discord.gg/bQVC7JVa">
               Discord
             </a>

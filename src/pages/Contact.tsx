@@ -12,16 +12,13 @@ export default function Contact() {
         <br />
         <p>
           You can email me at <i>pahrel1234@gmail.com</i>, or drop me a message
-          on{" "}
-          <a href="https://m.me/61577039463575?hash=AbYGtFQYcT5RAnrA&source=qr_link_share"> 
-          Facebook Messenger.
-          </a>
+          on <a href="https://discord.gg/bQVC7JVa">Discord.</a>
         </p>
         <br />
         <p>
           Want to connect?{" "}
           <a href="https://discord.gg/bQVC7JVa">
-            Feel free to message me on Discord.
+            Feel free to message me.
           </a>
         </p>
         <br />
