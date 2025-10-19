@@ -37,8 +37,8 @@ export default function App() {
   function lightMode() {
     document.documentElement.style.setProperty("--color", "#efebe0");
     document.documentElement.style.setProperty("--silver", "#efebe0");
-    document.documentElement.style.setProperty("--timberwolf", "#000000");
-    document.documentElement.style.setProperty("--background-color", "#0d0c0c");
+    document.documentElement.style.setProperty("--timberwolf", "#2d2d2dff");
+    document.documentElement.style.setProperty("--background-color", "#1d1d1dff");
   }
 
   if (userTheme === "dark") {
