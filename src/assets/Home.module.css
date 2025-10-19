@@ -26,6 +26,7 @@
 
 .jumbotron p .aAlternative {
   color: var(--color);
+  line-height: var(--subheader-line-height);
   text-decoration: none;
 }
 
@@ -41,6 +42,7 @@
 @media screen and (max-width: 1000px) {
   .jumbotron p {
     line-height: 21px;
+    gap: 10px;
   }
   .jumbotron ul {
     gap: 15px;
