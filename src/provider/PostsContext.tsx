@@ -91,9 +91,7 @@ export const PostsProvider: React.FC<PostsProviderProps> = ({ children }) => {
   if (isLoading) {
     return (
       <div className="loadingContainer">
-        <span>.</span>
-        <span>.</span>
-        <span>.</span>
+        <p>loading...</p>
       </div>
     );
   }

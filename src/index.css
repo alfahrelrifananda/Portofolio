@@ -8,20 +8,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Size */
   --container-width: 65vw;
   --container-post-width: 50vw;
   --container-height: calc(100vh - 240px);
 
-  /* Padding  */
   --padding-horizontal: 7vw;
   --padding-vertical: 7vh;
   --padding-vertical-small: 3vh;
 
-  /* Font Weight */
   --bold: 700;
 
-  /* Font Size */
   --header-size: 43px;
   --header-line-height: 48px;
 
@@ -53,17 +49,14 @@ button {
 
 @media screen and (max-width: 1000px) {
   :root {
-    /* Width */
     --container-width: 100%;
     --container-post-width: 100%;
     --container-height: calc(100dvh - 240px);
 
-    /* Padding  */
     --padding-horizontal: 5vw;
     --padding-vertical: 5vw;
     --padding-vertical-small: 5vw;
 
-    /* Font Size */
     --header-size: 28px;
     --header-line-height: 31px;
 
