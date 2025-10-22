@@ -6,7 +6,6 @@ import React, {
   type ReactNode,
 } from "react";
 import { createClient } from "@supabase/supabase-js";
-
 const supabase = createClient(
   import.meta.env.VITE_SUPABASE_URL,
   import.meta.env.VITE_SUPABASE_ANON_KEY
@@ -20,6 +19,16 @@ interface Post {
   date: string;
   categories: string[];
   tags: string[];
+}
+
+interface PostsContextType {
+  posts: Post[];
+  getPost: (id: string) => Promise<Post | null>;
+  refetch: () => Promise<void>;
+}
+
+interface PostsProviderProps {
+  children: ReactNode;
 }
 
 const supabaseClient = {
@@ -42,11 +51,6 @@ const supabaseClient = {
   },
 };
 
-interface PostsContextType {
-  posts: Post[];
-  getPost: (id: string) => Promise<Post | null>;
-  refetch: () => Promise<void>;
-}
 
 const PostsContext = createContext<PostsContextType | undefined>(undefined);
 
@@ -57,10 +61,6 @@ export const usePosts = () => {
   }
   return context;
 };
-
-interface PostsProviderProps {
-  children: ReactNode;
-}
 
 export const PostsProvider: React.FC<PostsProviderProps> = ({ children }) => {
   const [posts, setPosts] = useState<Post[]>([]);
