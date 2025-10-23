@@ -4,7 +4,8 @@
   line-height: var(--body-line-height);
   justify-content: space-between;
   font-weight: var(--bold);
-  height: 50px;
+  height: calc(50px - var(--body-size));
+  padding-top: var(--body-size);
   overflow: hidden;
   align-items: center;
 }
