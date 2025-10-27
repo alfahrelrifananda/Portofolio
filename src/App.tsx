@@ -13,6 +13,7 @@ import "./App.css";
 import { createContext, useEffect, useState } from "react";
 import Footer from "./components/Footer.tsx";
 import Nav from "./components/Nav.tsx";
+import Chat from "./chat/Chat.tsx";
 
 export const ThemeContext = createContext("dark");
 const adminDashboard = import.meta.env.VITE_DASHBOARD_URL;
@@ -38,7 +39,10 @@ export default function App() {
     document.documentElement.style.setProperty("--color", "#efebe0");
     document.documentElement.style.setProperty("--silver", "#efebe0");
     document.documentElement.style.setProperty("--timberwolf", "#2d2d2dff");
-    document.documentElement.style.setProperty("--background-color", "#1d1d1dff");
+    document.documentElement.style.setProperty(
+      "--background-color",
+      "#1d1d1dff"
+    );
   }
 
   if (userTheme === "dark") {
@@ -61,6 +65,19 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem("userTheme", userTheme);
   }, [userTheme]);
+
+  if (location.pathname === "/chat") {
+    return (
+      <>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/chat" element={<Chat />} />
+          </Routes>
+        </BrowserRouter>
+      </>
+    );
+  }
 
   return (
     <>
