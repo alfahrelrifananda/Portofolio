@@ -20,12 +20,6 @@ interface Message {
   color: string;
 }
 
-interface User {
-  username: string;
-  color: string;
-  lastSeen: number;
-}
-
 const COLORS = [
   "#FF6B6B",
   "#4ECDC4",
@@ -79,7 +73,7 @@ export default function Chat() {
     if (isJoined) {
       const cleanupOldMessages = async () => {
         const messagesRef = ref(database, "messages");
-        const snapshot = await onValue(
+        await onValue(
           messagesRef,
           (snap) => {
             const data = snap.val();
@@ -99,7 +93,7 @@ export default function Chat() {
 
       const cleanupInactiveUsers = async () => {
         const usersRef = ref(database, "users");
-        const snapshot = await onValue(
+        await onValue(
           usersRef,
           (snap) => {
             const data = snap.val();
