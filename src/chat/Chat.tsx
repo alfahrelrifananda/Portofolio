@@ -59,6 +59,7 @@ export default function Chat() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
+    document.title = "Chat Room";
     const randomUser = `User${Math.floor(Math.random() * 10000)}`;
     const randomColor = COLORS[Math.floor(Math.random() * COLORS.length)];
     setUsername(randomUser);
@@ -267,9 +268,9 @@ export default function Chat() {
       <div className={styles.joinContainer}>
         <div className={styles.joinBox}>
           <div className={styles.joinHeader}>
-            <h1 className={styles.title}>Anonymous Chat</h1>
+            <h1 className={styles.title}>Chat Room</h1>
             <p className={styles.subtitle}>
-              Join the conversation with people around the world
+              Join the conversation with people around the globe.
             </p>
           </div>
 
@@ -326,7 +327,7 @@ export default function Chat() {
         <div className={styles.headerContent}>
           <div className={styles.headerLeft}>
             <div>
-              <h1 className={styles.headerTitle}>Anonymous Chat</h1>
+              <h1 className={styles.headerTitle}>Chat Room</h1>
               <p className={styles.headerSubtitle}>You are: {username}</p>
             </div>
           </div>
