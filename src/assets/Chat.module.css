@@ -324,6 +324,10 @@
 }
 
 @media (max-width: 1000px) {
+  .joinContainer {
+    display: flex;
+    justify-content: center;
+  }
   .joinBox {
     padding: 30px 20px;
     border: none;
