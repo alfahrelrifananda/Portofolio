@@ -292,6 +292,7 @@
   flex: 1;
   padding: 12px;
   border: 2px solid var(--color);
+  color: var(--color);
   background-color: transparent;
   font-size: 14px;
   font-family: "Roboto Mono", monospace;
@@ -325,6 +326,7 @@
 @media (max-width: 1000px) {
   .joinBox {
     padding: 30px 20px;
+    border: none;
   }
 
   .title {
