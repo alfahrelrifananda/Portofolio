@@ -10,9 +10,8 @@
 
 .joinBox {
   background-color: var(--background-color);
-  border: 2px solid var(--color);
-  padding: 40px;
-  max-width: 450px;
+  padding: 10px;
+  max-width: 500px;
 }
 
 .joinHeader {
@@ -128,7 +127,6 @@
   background-color: var(--background-color);
   color: var(--color);
   padding: 15px 20px;
-  border-bottom: 2px solid var(--color);
 }
 
 .headerContent {
@@ -276,7 +274,6 @@
   left: 0;
   width: 100vw;
   background-color: var(--background-color);
-  border-top: 2px solid var(--color);
   padding: 15px 20px;
 }
 
@@ -325,11 +322,10 @@
 
 @media (max-width: 1000px) {
   .joinContainer {
-    display: flex;
-    justify-content: center;
+    display: block;
   }
   .joinBox {
-    padding: 30px 20px;
+    padding: 30px 10px;
     border: none;
   }
 
@@ -353,7 +349,7 @@
   }
 
   .messageInput {
-    max-width: 60%;
+    max-width: 55%;
   }
   .headerRight {
     width: 100%;
