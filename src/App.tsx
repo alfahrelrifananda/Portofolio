@@ -69,12 +69,14 @@ export default function App() {
   if (location.pathname === "/chat") {
     return (
       <>
-        <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/chat" element={<Chat />} />
-          </Routes>
-        </BrowserRouter>
+        <ThemeContext.Provider value={userTheme}>
+          <BrowserRouter>
+            <ScrollToTop />
+            <Routes>
+              <Route path="/chat" element={<Chat />} />
+            </Routes>
+          </BrowserRouter>
+        </ThemeContext.Provider>
       </>
     );
   }
